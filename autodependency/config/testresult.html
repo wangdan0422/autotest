@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Automation Test Report</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxlayout.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxgrid.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxtabbar.css" />
+	<link rel="STYLESHEET" type="text/css" href="../codebase/dhtmlxchart.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxwindows.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxlayout_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxgrid_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxaccordion_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxwindows_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxtabbar.css"/>
+	
+	<script src="../codebase/dhtmlxcommon.js"></script>
+	<script src="../codebase/dhtmlxtabbar.js"></script>
+	<script src="../codebase/dhtmlxtabbar_start.js"></script>
+
+	<script src="../codebase/dhtmlxcommon.js"></script>
+	<script src="../codebase/dhtmlxlayout.js"></script>
+	<script src="../codebase/dhtmlxcontainer.js"></script>
+
+	<script src="../codebase/dhtmlxgrid.js"></script>
+	<script src="../codebase/dhtmlxgridcell.js"></script>
+	<script src="../codebase/dhtmlxaccordion.js"></script>
+	<script src="../codebase/dhtmlxtabbar.js"></script>
+    <script src="../codebase/dhtmlxchart.js"></script>
+	<script src="../codebase/dhtmlxwindows.js"></script>
+
+	<script  src="../codebase/dhtmlxgridcell.js"></script>    
+	<script  src="../codebase/excells/dhtmlxgrid_excell_link.js"></script>
+
+    <script src="data/summary.js"></script>
+	
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden;
+		}
+
+	   .label{
+        background-color:#ffffff;
+        -moz-border-radius:4px;
+        -ms-border-radius:4px;
+        -webkit-border-radius:4px;
+        border-radius:4px;
+        height:15px;
+        line-height:15px;
+        font-size: 9px;
+        width:25px;
+        text-align:center;
+    }
+
+	</style>
+	
+  </head>
+  
+  <body>
+    <div id="aTabBar" style="width:100%;height:100%" ></div>
+	
+    <script>
+    	tabbar=new dhtmlXTabBar("aTabBar","bottom",30);
+		tabbar.setImagePath("../codebase/imgs/");
+		tabbar.setSkinColors("#CAE1FF");
+		tabbar.setHrefMode("iframes");
+		tabbar.addTab("s0","测试结果","100px");
+		tabbar.addTab("s1","错误分类","150px");
+
+		tabbar.setTabActive("s0",true,false);
+
+		tabbar.setContentHref("s0","result.html");
+		tabbar.setContentHref("s1","resultClassify.html");
+
+		tabbar.enableAutoReSize(true);
+    </script>
+  </body>
+</html>

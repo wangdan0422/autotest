@@ -1,0 +1,1344 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+	
+<group name='移动设备关键字'>
+	<group name='设备操作'>
+		<keyword id='bat_start'>
+			<name>执行批处理命令</name>
+			<comment>执行批处理命令</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:executeBat</implement>
+			<show>1</show>
+			<param id='filePath'>
+				<name>bat文件路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>文件相对路径，以测试工程所在目录为根目录。格式举例：/batFile/abc.bat</comment>
+			</param>
+			<param id='params'>
+				<name>参数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>需要传递的参数</comment>
+			</param>
+		</keyword>
+		<keyword id='android_emulator_start'>
+			<name>打开android模拟器</name>
+			<comment>打开android模拟器</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:startAndroidEmulator</implement>
+			<show>1</show>
+			<param id='avdName'>
+				<name>模拟器avd名称</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>用于启动android模拟器</comment>
+			</param>
+		</keyword>
+		<keyword id='android_emulator_stop'>
+			<name>关闭android模拟器</name>
+			<comment>关闭android模拟器</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:stopAndroidEmulator</implement>
+			<show>1</show>
+		</keyword>
+		<keyword id='appium_start'>
+			<name>启动appium应用</name>
+			<comment>启动appium应用</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:startAppium</implement>
+			<show>1</show>			
+		</keyword>
+		<keyword id='appium_start_noreset'>
+			<name>启动appium应用(不清理缓存)</name>
+			<comment>启动appium应用(不清理缓存)</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:startAppiumNoreset</implement>
+			<show>1</show>			
+		</keyword>
+		<keyword id='appium_stop'>
+			<name>停止appium应用</name>
+			<comment>用于停止appium应用</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:stopAppium</implement>
+			<show>1</show>
+		</keyword>
+		<keyword id='android_startActivity'>
+			<name>startActivity</name>
+			<comment>启动其他应用，跨APP</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:startActivity</implement>
+			<show>1</show>
+			<param id='appPackage'>
+				<name>appPackage</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于选择待操作的应用终端别名</comment>
+			</param>
+			<param id='appActivity'>
+				<name>appActivity</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于选择待操作的应用终端别名</comment>
+			</param>
+		</keyword>
+		<keyword id='android_restartApp'>
+			<name>launchApp</name>
+			<comment>launchApp</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:restartApp</implement>
+			<show>1</show>
+		</keyword>
+		<keyword id='mobile_app_open'>
+			<name>打开移动应用(准备开始测试)</name>
+			<comment>打开移动应用(准备开始测试)</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:appOpen</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>移动应用终端别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于选择待操作的应用终端别名</comment>
+			</param>
+			<param id='type'>
+				<name>终端类型</name>
+				<default>android</default>
+				<values>android\r\nios\r\nwindows</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>用于选择应用终端类型</comment>
+			</param>
+			<param id="browsername">
+				<name>浏览器名称</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>浏览器名称Chrome</comment>
+			</param>
+			<param id='deviceName'>
+				<name>运行设备名称</name>
+				<default>android</default>
+				<values>android\r\nselendroid</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>运行设备名称</comment>
+			</param>
+			<param id='appFile'>
+				<name>待测试的应用程序位置</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待测试应用程序位置，android系统指.apk文件所在位置，  ios系统指.app文件所在位置(相对位置：/app/tuniu.apk)</comment>
+			</param>
+			<param id='appPackage'>
+				<name>待测应用的 package名字</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>待测应用的 package名字(如果测试的是IOS应用可以忽略此项):com.tuniu.app.ui</comment>
+			</param>
+			<param id='appActivity'>
+				<name>待测应用的 Activity名字</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>待测应用的 Activity名字(如果测试的是IOS应用，可以忽略此项):com.tuniu.app.ui.activity.LaunchActivity</comment>
+			</param>
+			<param id='WaitAppActivity'>
+				<name>等待应用的 Activity名字</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>等待应用的 Activity名字(如果测试的是IOS应用，可以忽略此项)</comment>
+			</param>
+		</keyword>	
+		<keyword id='mobile_getbrowser'>
+			<name>打开浏览器</name>
+			<comment>打开浏览器</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:getbrowser</implement>
+			<show>1</show>
+			<param id='url'>
+				<name>浏览器地址</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_app_close'>
+			<name>关闭移动应用(结束测试)</name>
+			<comment>关闭移动应用(结束测试)</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:appClose</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>移动应用别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于选择待操作的应用别名</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_presskey'>
+			<name>物理按键</name>
+			<comment>物理按键</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobilePressKey</implement>
+			<show>1</show>
+			<param id='oKeys'>
+				<name>物理按键</name>
+				<default></default>
+				<values>home\r\nback\r\nmenu\r\nenter\r\nBACKSPACE\r\nDEL\r\nSETTINGS\r\nSPACE</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>物理按键，String类型，请注意输入格式，格式举例：home(https://testerhome.com/topics/799)</comment>
+			</param>
+			<param id='count'>
+				<name>操作次数</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>模拟物理按键点击次数，默认1次</comment>
+			</param>
+		</keyword>
+		<keyword id='installUtf7Ime'>
+			<name>安装中文输入法</name>
+			<comment>安装中文输入法</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:installUtf7Ime</implement>
+			<show>1</show>			
+		</keyword>	
+		<keyword id='mobile_pushFile'>
+			<name>把文件从PC拷贝到手机</name>
+			<comment>把文件从PC拷贝到手机</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:pushFile</implement>
+			<show>1</show>
+			<param id='PCFilename'>
+				<name>电脑文件路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>电脑文件路径，相对路径。/file/test.txt</comment>
+			</param>
+			<param id='MobileFilename'>
+				<name>手机文件路径</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>手机文件路径，sdcard/test.txt</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_pullFile'>
+			<name>获取手机文件内容</name>
+			<comment>获取手机文件内容</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:pullFile</implement>
+			<show>1</show>
+			<param id='MobileFilename'>
+				<name>手机文件路径</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>手机文件路径，sdcard/test.txt</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_getcurrentActivity'>
+			<name>获取当前界面的activity</name>
+			<comment>获取当前界面的activity</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:getcurrentActivity</implement>
+			<show>1</show>
+			<param id='out'>
+				<name>返回参数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_openNotifications'>
+			<name>打开通知栏界面</name>
+			<comment>打开通知栏界面</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:openNotifications</implement>
+			<show>1</show>
+		</keyword>
+		<keyword id='mobile_installApp'>
+			<name>安装app</name>
+			<comment>安装app</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:installApp</implement>
+			<show>1</show>
+			<param id='appPath'>
+				<name>app路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>app相对路径，/app/tuniu.apk</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_isAppInstalled'>
+			<name>判断应用是否安装</name>
+			<comment>判断应用是否安装</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:isAppInstalled</implement>
+			<show>1</show>
+			<param id='packagename'>
+				<name>应用的包名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='out'>
+				<name>返回参数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_getWidthAndHight'>
+			<name>获取设备屏幕宽度和高度</name>
+			<comment>获取设备屏幕宽度和高度</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:getWidthAndHight</implement>
+			<show>1</show>
+			<param id='widthout'>
+				<name>屏幕宽度</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='hightout'>
+				<name>屏幕高度</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+		</keyword>
+	</group>	
+	<group name='网络操作'>
+		<keyword id='mobile_getNetworkConnection'>
+			<name>获取网络状态</name>
+			<comment>获取网络状态</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:getNetworkConnection</implement>
+			<show>1</show>
+			<param id='out'>
+				<name>返回参数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_setNetworkConnection'>
+			<name>设置网络状态</name>
+			<comment>设置网络状态</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:setNetworkConnection</implement>
+			<show>1</show>
+			<param id='airplaneMode'>
+				<name>airplaneMode</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数,false</comment>
+			</param>
+			<param id='wifi'>
+				<name>wifi</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数,true</comment>
+			</param>
+			<param id='data'>
+				<name>data</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数,false</comment>
+			</param>
+			<param id='out'>
+				<name>返回参数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数</comment>
+			</param>
+		</keyword>
+	</group>
+	<group name='控件操作'>
+		<keyword id='mobile_element_click'>
+			<name>控件点击</name>
+			<comment>根据定位符查找控件，并模拟鼠标点击该控件</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:elementClick</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_element_click_byxpath'>
+			<name>控件点击(xpath)</name>
+			<comment>根据定位符查找控件，并模拟鼠标点击该控件</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:elementClickByXpath</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_element_text_input'>
+			<name>文本框文本输入</name>
+			<comment>根据文本框控件定位符查找文本框位置，清空文本框中原文字，同时将期望文字模拟输入至文本框中</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:textInput</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>文本框控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>文本框控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+			<param id='text'>
+				<name>待输入的文字</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>待输入的文字</comment>
+			</param>			
+		</keyword>
+		
+		<keyword id='mobile_element_text_clear'>
+			<name>清空文本框文本</name>
+			<comment>根据文本框控件定位符查找文本框位置，清空文本框中原文字</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:textClear</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>文本框控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>文本框控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>			
+		</keyword>
+		<keyword id='mobile_element_get_element_text'>
+			<name>获取控件文本</name>
+			<comment>根据输入的控件定位符查找控件，并将此控件的文本内容存入输出变量中保存在上下文待引用</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:getElementText</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待获取文本内容的控件的定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>		
+			<param id='outVar'>
+				<name>输出变量名称[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的控件文本内容存入该变量并保存在上下文待引用。输入举例：var_text</comment>
+			</param>			
+		</keyword>
+		<keyword id='mobile_longclick'>
+			<name>长按操作</name>
+			<comment>长按操作</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileLongClick</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>locator</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>	
+		</keyword>		
+
+		<keyword id='mobile_swipe'>
+			<name>触摸滑屏</name>
+			<comment>触摸滑屏</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileSwipe</implement>
+			<show>1</show>
+			<param id='startX'>
+				<name>startX</name>
+				<default>0.85</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>startX，Double类型，请注意输入格式，格式举例：0.85</comment>
+			</param>
+			
+			<param id='startY'>
+				<name>startY</name>
+				<default>0.5</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>startY，Double类型，请注意输入格式，格式举例：0.5</comment>
+			</param>
+			<param id='endX'>
+				<name>endX</name>
+				<default>0.15</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>endX，Double类型，请注意输入格式，格式举例：0.15</comment>
+			</param>
+			<param id='endY'>
+				<name>endY</name>
+				<default>0.5</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>endY，Double类型，请注意输入格式，格式举例：0.5</comment>
+			</param>
+			<param id='duration'>
+				<name>duration</name>
+				<default>1.0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>duration，Double类型，请注意输入格式，格式举例：1.0</comment>
+			</param>
+			<param id='count'>
+				<name>操作次数</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>操作的次数，默认1次</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_tap'>
+			<name>点击某个坐标</name>
+			<comment>点击某个坐标</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileTap</implement>
+			<show>1</show>
+			<param id='x'>
+				<name>x</name>
+				<default>0.5</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>x，Double类型，请注意输入格式，格式举例：0.85</comment>
+			</param>
+			<param id='y'>
+				<name>y</name>
+				<default>0.5</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>y，Double类型，请注意输入格式，格式举例：0.85</comment>
+			</param>
+			<param id='duration'>
+				<name>duration</name>
+				<default>1.0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>duration，Double类型，请注意输入格式，格式举例：1.0</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_tap_element'>
+			<name>点击某个控件</name>
+			<comment>点击某个控件</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileTapElement</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default>0.5</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>控件定位符，name::name</comment>
+			</param>
+			<param id='index'>
+				<name>控件定位符顺序</name>
+				<default>0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>0，</comment>
+			</param>
+			<param id='finger'>
+				<name>点击次数</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>1：点击次数</comment>
+			</param>
+			<param id='duration'>
+				<name>duration</name>
+				<default>1.0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>duration，Double类型，请注意输入格式，格式举例：1.0</comment>
+			</param>
+		</keyword>
+<!--  		
+		<keyword id='mobile_flick'>
+			<name>终端flick</name>
+			<comment>终端flick</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileFlick</implement>
+			<show>1</show>
+			<param id='endX'>
+				<name>endX</name>
+				<default>0.15</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>endX，Double类型，请注意输入格式，格式举例：0.0</comment>
+			</param>
+			<param id='endY'>
+				<name>endY</name>
+				<default>0.5</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>endY，Double类型，请注意输入格式，格式举例：0.0</comment>
+			</param>
+			<param id='touchCount'>
+				<name>touchCount</name>
+				<default>2.0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>touchCount，Double类型，请注意输入格式，格式举例：(double) 2</comment>
+			</param>
+			<param id='count'>
+				<name>count</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>count，Double类型，请注意输入格式，格式举例：1</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_scroll'>
+			<name>终端scroll</name>
+			<comment>终端scroll</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileScroll</implement>
+			<show>1</show>
+		</keyword>
+		<keyword id='mobile_slider'>
+			<name>终端slider</name>
+			<comment>终端slider</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileSlider</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>locator</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+			<param id='keyToSend'>
+				<name>keyToSend</name>
+				<default>0.1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>keyToSend，double类型，请注意输入格式，格式举例：0.1</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_scrollTo'>
+			<name>终端scrollTo</name>
+			<comment>终端scrollTo</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileScrollTo</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>locator</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>	
+		</keyword>
+		-->
+		<keyword id='mobile_snapshot'>
+			<name>手机截屏</name>
+			<comment>手机截屏</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileAppSnapshot</implement>
+			<show></show>
+		</keyword>
+		<keyword id='mobile_app_snapshot'>
+			<name>手机截屏(不可拖拽，系统调用)</name>
+			<comment>手机截屏(不可拖拽，系统调用)</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:mobileSnapshot</implement>
+			<show></show>
+		</keyword>
+		<keyword id='mobile_selectDate_forTuniuApp'>
+			<name>选择日期控件（途牛旅游酒店时间控件）</name>
+			<comment>选择日期控件（途牛旅游酒店时间控件）</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:clickDate</implement>
+			<show></show>
+			<param id='date0'>
+				<name>入住时间</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>格式为：2012年03月01日</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_selectDate_forTuniuApp1'>
+			<name>选择日期控件（途牛旅游酒店离店时间控件）</name>
+			<comment>选择日期控件（途牛旅游酒店离店时间控件）</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:clickDate1</implement>
+			<show></show>
+			<param id='date0'>
+				<name>入住时间</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>格式为：2012年03月01日</comment>
+			</param>
+			<param id='date1'>
+				<name>离开时间</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>格式为：2012年03月01日</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_element_click1'>
+			<name>控件点击（id、name、xpath存在多个时使用）</name>
+			<comment>根据定位符查找控件，并模拟鼠标点击该控件</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:elementClick1</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+			<param id='index'>
+				<name>元素下标</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>元素在list中的位置，如0,1,2,3</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_getTextByLocatorAndIdx'>
+			<name>获取控件文本（id、name、xpath存在多个时使用）</name>
+			<comment>获取控件文本（id、name、xpath存在多个时使用）</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:findElementByIdAndIndex</implement>
+			<show></show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+			<param id='index'>
+				<name>元素的下标</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>根据id查找出的多个元素，第几个是想要的元素，如 0,1,2,3</comment>
+			</param>
+			<param id='outVar'>
+				<name>输出变量名称[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的控件文本内容存入该变量并保存在上下文待引用。输入举例：var_text</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_getDiffBetweenDate'>
+			<name>获取两个时间的年月日差</name>
+			<comment>获取两个时间的年月日差</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:getDiffBetweenDate</implement>
+			<show></show>
+			<param id='date1'>
+				<name>日期1</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='date2'>
+				<name>日期2</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='dateFormat'>
+				<name>日期格式</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>如:yyyy年MM月dd日</comment>
+			</param>
+			<param id='out1'>
+				<name>输出变量名称[OUTYEAR]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的控件文本内容存入该变量并保存在上下文待引用。输入举例：var_text</comment>
+			</param>
+			<param id='out2'>
+				<name>输出变量名称[OUTMONTH]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的控件文本内容存入该变量并保存在上下文待引用。输入举例：var_text</comment>
+			</param>
+			<param id='out3'>
+				<name>输出变量名称[OUTDATE]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的控件文本内容存入该变量并保存在上下文待引用。输入举例：var_text</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_findelement_swipe'>
+			<name>滑动屏幕查找元素</name>
+			<comment>在当前屏幕根据定位符查找元素，如果没找到则滑屏继续查找（最多滑动50次）</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:findElementBySwipe</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_clickelement_swipe'>
+			<name>点击元素（元素通过滑动屏幕查找）</name>
+			<comment>在当前屏幕根据定位符查找元素，如果没找到则滑屏继续查找（最多滑动50次），找到则点击它</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:clickElementBySwipe</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_getelement_size'>
+			<name>获取元素个数</name>
+			<comment>在当前屏幕根据定位符获取元素的个数</comment>
+			<implement>org.tn.qa.automation.keyword.MobileElementKeyword:countElement</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待点击的控件定位符，请注意输入格式，格式举例：name::abc</comment>
+			</param>
+			<param id='outVar'>
+				<name>输出变量名称[OUTDATE]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的控件文本内容存入该变量并保存在上下文待引用。输入举例：var_text</comment>
+			</param>
+		</keyword>  	 			
+	</group>	
+	<group name='校验操作'>
+	<!--
+		<keyword id='mobile_verify_element_visible'>
+			<name>校验控件可见性</name>
+			<comment>校验某控件是否可见，预期可见输入true，预期不可见输入false。若预期与实际不符则会抛出异常</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementVisible</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件的元素取值，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='isVisible'>
+				<name>预期可见性</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期控件可见，请选择true; 预期控件不可见，请输入false</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_verify_element_enabled'>
+			<name>校验控件可用性</name>
+			<comment>校验控件是否可用。预期可用输入true，预期不可用输入false。若预期与实际不符则会抛出异常</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementEnabled</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件定位符,请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='isEnabled'>
+				<name>预期可用性</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期控件可用，请输入true; 预期控件不可用，请输入false</comment>
+			</param>		
+		</keyword>
+		-->	
+		<keyword id='mobile_browser_wait_for_exist'>
+			<name>等待控件存在性判断</name>
+			<comment>等待某控件存在/不存在，等待最多为配置的最大等待时间，超时与预期判断不符则抛异常</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:waitForElementExist</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>该控件的元素定位取值，请注意输入格式，Eg: name::abc</comment>
+			</param>
+			<param id='isExist'>
+				<name>预期存在性</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期某控件存在，请选择true；预期某控件不存在，请选择false</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_browser_wait_for_text'>
+			<name>等待控件文本匹配性判断</name>
+			<comment>等待某控件文本匹配/不匹配，支持文本的模糊匹配,等待最多为配置的最大等待时间，超时与预期判断不符则抛异常</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:waitForElementText</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>该控件的元素定位取值，请注意输入格式，Eg: name::abc</comment>
+			</param>
+			<param id='text'>
+				<name>预匹配文本</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>预期匹配的文本，若某控件不存在文本，则可不输</comment>
+			</param>
+			<param id='isMatched'>
+				<name>预期匹配性</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期某文本与控件文本匹配，请选择true; 预期某文本与控件文本不匹配，请输入false</comment>
+			</param>
+		</keyword>
+		
+		<keyword id='mobile_verify_element_existed'>
+			<name>校验控件是否存在</name>
+			<comment>校验控件是否存在，预期存在输入true，预期不存在输入false；若预期与实际不符，则会抛出异常</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementExisted</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验存在性控件元素取值，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='isExisted'>
+				<name>预期存在状态</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期控件为存在状态，请选择true; 预期控件为不存在状态，请选择false</comment>
+			</param>		
+		</keyword>
+		
+		<keyword id='mobile_verify_element_text'>
+			<name>校验控件文本</name>
+			<comment>校验控件文本内容与输入内容是否在指定模式下与期望的匹配结果相同。
+            如，控件文本为a1，预期文本为a2，期望结果为true，模糊匹配模式，可以理解为，期望a1包含a2；
+			反之若期望结果为false，则期望a1不包含a2。
+			匹配结果与期望不一致则抛异常。
+			</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementText</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件定位符，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='text'>
+				<name>预期文本</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期文本，请根据待指定的匹配模式输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values>精确匹配\r\n模糊匹配\r\n正则表达式匹配</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择。</comment>
+			</param>
+		</keyword>
+		
+		<keyword id='mobile_verify_element_text1'>
+			<name>校验控件文本(用于id、name有多个的情况)</name>
+			<comment>校验控件文本内容与输入内容是否在指定模式下与期望的匹配结果相同。
+            如，控件文本为a1，预期文本为a2，期望结果为true，模糊匹配模式，可以理解为，期望a1包含a2；
+			反之若期望结果为false，则期望a1不包含a2。
+			匹配结果与期望不一致则抛异常。
+			</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementText1</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件定位符，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='index'>
+				<name>元素的下标</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>元素在list的位置，如0,1,2,3</comment>
+			</param>
+			<param id='text'>
+				<name>预期文本</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期文本，请根据待指定的匹配模式输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values>精确匹配\r\n模糊匹配\r\n正则表达式匹配</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择。</comment>
+			</param>
+		</keyword>
+		
+		
+		<keyword id='mobile_verify_element_attribute'>
+			<name>校验控件属性值</name>
+			<comment>校验控件某属性的值与输入内容是否在指定模式下与期望的匹配结果相同。
+            如，控件某属性值为a1，预期为a2，期望结果为true，模糊匹配模式，可以理解为，期望a1包含a2；
+			反之若期望结果为false，则期望a1不包含a2。
+			匹配结果与期望不一致则抛异常。
+			</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementAttribute</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件定位符，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='attribute'>
+				<name>控件属性</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件的某个属性。如，value、tagname、type、height等</comment>
+			</param>
+			<param id='value'>
+				<name>预期属性值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期属性值，请根据待指定的匹配模式输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values>精确匹配\r\n模糊匹配\r\n正则表达式匹配</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择。</comment>
+			</param>
+		</keyword>
+		<!--
+		<keyword id='mobile_verify_element_selected'>
+			<name>校验控件是否已选中</name>
+			<comment>校验控件是否被选中，该控件为单选框或复选框。预期选中输入true，预期未选中输入false；若预期与实际不符，则会抛出异常</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyElementSelected</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验单选框或复选框的控件元素取值，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='isSelected'>
+				<name>预期选中状态</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期控件为选中状态，请选择true; 预期控件为未选中状态，请选择false</comment>
+			</param>		
+		</keyword>
+		
+		<keyword id='mobile_verify_alert_text'>
+			<name>校验弹出框文本</name>
+			<comment>校验弹出框文本与输入的预期文本是否在指定的模式下相匹配。
+            如，预期文本为a1，匹配模式为模糊匹配，期望结果为true，可以理解为：期望弹框文本中包含a1；
+			反之，期望结果为false，则理解为：期望弹框文本中不包含a1
+			若不匹配则会抛出异常</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyAlertText</implement>
+			<show>1</show>
+			<param id='text'>
+				<name>预期文本</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期文本，请根据待指定的匹配模式输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values>精确匹配\r\n模糊匹配\r\n正则表达式匹配</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择</comment>
+			</param>	
+		</keyword>
+		<keyword id='mobile_verify_combo_select'>
+			<name>校验下拉选项文本</name>
+			<comment>校验下拉选项文本，是否包含指定的ITEM</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyComboSelectOption</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验控件定位符，请注意输入正确格式，格式举例：name::abc</comment>
+			</param>
+			<param id='text'>
+				<name>预期文本</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期文本，请根据待指定的匹配模式输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+		</keyword>
+		 
+		<keyword id='mobile_browser_wait_for_visible'>
+			<name>等待控件可见性判断</name>
+			<comment>等待某控件可见/不可见,等待最多为配置的最大等待时间，超时与预期判断不符则抛异常</comment>
+			<implement>org.tn.qa.automation.keyword.MobileKeyword:waitForElementVisible</implement>
+			<show>1</show>
+			<param id='locator'>
+				<name>控件定位符</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>该控件的元素定位取值，请注意输入格式，Eg: name::abc</comment>
+			</param>
+			<param id='isVisible'>
+				<name>预期可见性</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期某控件存在，请选择true; 预期某控件不可见，请选择false</comment>
+			</param>
+		</keyword>
+		 -->
+		<keyword id='mobile_timecompare_forTuniuApp'>
+			<name>判断时间先后</name>
+			<comment>判断时间1和时间2的先后顺序，</comment>
+			<implement>org.tn.qa.automation.keyword.SpecialKeyword:compartTime</implement>
+			<show>1</show>
+			<param id='time1'>
+				<name>时间1</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待比较时间，请注意输入格式，Eg: 8:29</comment>
+			</param>
+			<param id='time2'>
+				<name>时间2</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待比较时间，请注意输入格式，Eg: 8:29</comment>
+			</param>
+			<param id='isLater'>
+				<name>是否时间1在时间2后</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期是否时间1在时间2后</comment>
+			</param>
+		</keyword>
+		<keyword id='mobile_isElementExist_todoNext'>
+			<name>根据元素存在性点击另一个元素</name>
+			<comment>用于元素可能存在时影响其他步骤执行（如：版本更新提示）</comment>
+			<implement>org.tn.qa.automation.keyword.VerifyMobileKeyword:verifyelementToNextOpe</implement>
+			<show>1</show>
+			<param id='locator1'>
+				<name>元素1</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待查找元素，用于判断是否执行下一步元素点击</comment>
+			</param>
+			<param id='isExist'>
+				<name>是否存在</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期元素1是否存在</comment>
+			</param>
+			<param id='locator2'>
+				<name>点击的元素</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>需要点击的元素</comment>
+			</param>
+		</keyword>
+	</group>	
+</group>
+
+</root>

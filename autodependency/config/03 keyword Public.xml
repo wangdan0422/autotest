@@ -1,0 +1,2252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+	
+<group name='公用关键字'>
+		
+		
+  <group name='Redis操作'>
+	  <keyword id='redis_connect_redis'>
+			<name>打开redis连接</name>
+			<comment>输入ip地址和端口连接redis，若有密码则输入，没有可不输入</comment>
+			<implement>org.tn.qa.automation.keyword.RedisKeyword:connectRedis</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>redis连接别名,若不输入则别名为空，建议输入</comment>
+			</param>
+			<param id='redisIP'>
+				<name>IP地址</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的redis的服务器地址</comment>
+			</param>
+			<param id='redisPort'>
+				<name>端口号</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的redis端口号</comment>
+			</param>
+			<param id='redisPasswd'>
+				<name>密码</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>待连接的redis密码，若没有可不输入</comment>
+			</param>
+		</keyword>
+		<keyword id='redis_get_RedisVal'>
+			<name>获取redis中对应key的值</name>
+			<comment>根据输入的key获取其对应的value值。若输入的key在redis中不存在，返回字符串nil</comment>
+			<implement>org.tn.qa.automation.keyword.RedisKeyword:getRedisVal</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>redis连接别名，若别名为空则不输入</comment>
+			</param>
+			<param id='redisKey'>
+				<name>key</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<comment>redis的key值</comment>
+			</param>
+		 <param id='redisValue'> 
+		 	<name>输出变量名称[OUT]</name> 
+		 	<default>var_redisValue</default> 
+		  <values></values> 
+		  <required>T</required> 
+		  <comment>输出变量名称-将获取的redis的value值，保存至该变量并放入上下文中待引用。缺省为var_redisValue，可随意更改。
+		           若输入的key在redis中不存在，则变量对应的值为nil	
+		  </comment>
+		 </param> 
+		</keyword>
+		<keyword id='redis_set_RedisString'>
+			<name>新增/修改redis中key对应String类型值</name>
+			<comment>根据输入的key设置其对应的String值。若key存在则覆盖修改数据，若key不存在则添加此key</comment>
+			<implement>org.tn.qa.automation.keyword.RedisKeyword:setRedisString</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>redis连接别名，若别名为空则不输入</comment>
+			</param>
+			<param id='redisKey'>
+				<name>key</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<comment>redis的key值</comment>
+			</param>
+		 <param id='redisValue'> 
+		 	<name>value</name> 
+		 	<default></default> 
+		  <values></values> 
+		  <required>T</required> 
+		  <comment>redis中key待修改后的value属性值</comment>
+		 </param> 
+		</keyword>
+		<keyword id='redis_del_RedisKey'>
+			<name>删除redis中key数据</name>
+			<comment>若存在与输入key一致的记录则删除，不存在key则不做操作</comment>
+			<implement>org.tn.qa.automation.keyword.RedisKeyword:deleteRedisKey</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>redis连接别名，若别名为空则不输入</comment>
+			</param>
+			<param id='redisKey'>
+				<name>key</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<comment>redis的key值</comment>
+			</param>
+		</keyword>
+		<keyword id='redis_quit_Redis'>
+			<name>退出redis连接</name>
+			<comment>退出redis连接</comment>
+			<implement>org.tn.qa.automation.keyword.RedisKeyword:quitRedis</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>redis连接别名，若别名为空则不输入</comment>
+			</param>
+		</keyword>
+	</group>
+  <group name='AMQ操作'>
+  	<keyword id='amq_connect_amq'>
+			<name>打开amq连接</name>
+			<comment>输入ip地址和端口连接amq</comment>
+			<implement>org.tn.qa.automation.keyword.MqKeyword:connectAMQ</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>amq连接别名,若不输入则别名为空，建议输入</comment>
+			</param>
+			<param id='amqIp'>
+				<name>IP地址</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的amq的服务器地址</comment>
+			</param>
+			<param id='ampPort'>
+				<name>端口号</name>
+				<default>61616</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的amq端口号</comment>
+			</param>
+		</keyword>
+	<keyword id='amq_connect_queue'>
+			<name>连接amq队列</name>
+			<comment>输入amq消息队列名称，连接到该amq队列。</comment>
+			<implement>org.tn.qa.automation.keyword.MqKeyword:createAMQQueue</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>amq接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个amq链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='queue'>
+				<name>amq队列名称</name>
+				<default>0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>amq队列名称，如topic.complaint.catisfaction.update</comment>
+			</param>
+			<param id='amq_set'>
+				<name>消息队列集[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将查询结果集存入该变量并保存在上下文待引用。输入举例：VAR_DATA_SET</comment>
+			</param>
+		</keyword>
+		<keyword id='amq_send_message'>
+			<name>发送消息到amq队列</name>
+			<comment>发送消息到amq队列。</comment>
+			<implement>org.tn.qa.automation.keyword.MqKeyword:sendMqMessage</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>amq接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个amq链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='amq_set'>
+				<name>队列消息集</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>消息队列集，使用队列集来访问消息队列</comment>
+			</param>
+			<param id='request'>
+				<name>发送的消息</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>发送的息</comment>
+			</param>
+		</keyword>
+		<keyword id='amq_get_message'>
+			<name>获取amq消息队列消息</name>
+			<comment>从amq消息队列获取消息。</comment>
+			<implement>org.tn.qa.automation.keyword.MqKeyword:getMqMessage</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>amq接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个amq链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='amq_set'>
+				<name>队列消息集</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>消息队列集，使用队列集来访问消息队列</comment>
+			</param>
+			<param id='mqMsg'>
+				<name>获取到消息[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将查询结果集存入该变量并保存在上下文待引用。输入举例：VAR_Message</comment>
+			</param>
+			<param id='wait_time'>
+				<name>等待时间（ms）</name>
+				<default>1000</default>
+				<values></values>
+				<required></required>
+				<datapool></datapool>
+				<comment>等待若干时间后，再从队列中获取消息。</comment>
+			</param>
+		</keyword>
+		<keyword id='amq_close_amq'>
+			<name>关闭amq连接</name>
+			<comment>关闭amq连接。</comment>
+			<implement>org.tn.qa.automation.keyword.MqKeyword:closeAMQ</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>amq接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个amq链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+		</keyword>
+  </group>
+  <group name='数据库操作'>
+		<keyword id='database_open'>
+			<name>打开数据库连接</name>
+			<comment>根据指定的URL，用户名和密码打开数据库链接。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:open</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='type'>
+				<name>数据库类型</name>
+				<default>DB2</default>
+				<values>DB2\r\nMYSQL\r\nORACLE</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据库类型：当前支持DB2，MySql，Oracle</comment>
+			</param>
+			<param id='url'>
+				<name>数据库URL</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据库链接URL。输入举例：jdbc:db2://192.168.40.100:50004/sitdb</comment>
+			</param>
+			<param id='username'>
+				<name>数据库用户名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据库链接用户名。</comment>
+			</param>
+			<param id='password'>
+				<name>数据库密码</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据库链接密码。</comment>
+			</param>
+		</keyword>
+		
+		<keyword id='database_query'>
+			<name>执行SQL查询</name>
+			<comment>执行指定的SQL语句，将查询的结果集存入变量并保存在上下文待引用。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:query</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='sql'>
+				<name>SQL语句</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的SQL语句，输入举例：SELECT * FROM dual</comment>
+			</param>
+			<param id='maxTimeOut'>
+				<name>查询超时时间(ms)</name>
+				<default>0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>查询超时时间，单位为毫秒。防止出现诸如新增操作数据入库需要一段时间，在入库前即查询为空的场景，当查询为空时等待1s循环查询，直到设置的超时时间为止</comment>
+			</param>
+			<param id='data_set'>
+				<name>查询结果集[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将查询结果集存入该变量并保存在上下文待引用。输入举例：VAR_DATA_SET</comment>
+			</param>
+		</keyword>
+		
+		<keyword id='database_non_query'>
+			<name>执行SQL新增/修改/删除</name>
+			<comment>执行指定的SQL-INSERT/UPDATE/DELETE等非返回结果的语句</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:executeNonResultSql</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='sql'>
+				<name>SQL语句</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的插入、修改、删除等非输出结果的SQL语句，输入举例：INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)</comment>
+			</param>
+		</keyword>
+		<keyword id='database_non_query_FromFile'>
+			<name>批量执行SQL</name>
+			<comment>解析.sql文件，批量执行INSERT/UPDATE/DELETE等非返回结果的语句</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:executeNonResultSqlFromFile</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='path'>
+				<name>文件路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>文件相对路径，以测试工程所在目录为根目录。格式举例：/sqlFile/abc.sql</comment>
+			</param>
+		</keyword>
+		
+		<keyword id='database_verify_data'>
+			<name>校验数据库结果集</name>
+			<comment>校验数据库结果集的正确性。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:verifyData</implement>
+			<show>1</show>
+			<param id='data_set'>
+				<name>结果集</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验结果集，通常设置《执行SQL查询》返回的变量值。</comment>
+			</param>
+			<param id='row'>
+				<name>行号</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验数据行编号，从1开始计数，输入举例：1，当校验结果集时候，该选项填写ALL</comment>
+			</param>
+			<param id='column'>
+				<name>列名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验某数据列名称。</comment>
+			</param>
+			<param id='text'>
+				<name>预期文本</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期文本，请根据待指定的匹配模式根据分隔符输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values>精确匹配\r\n模糊匹配\r\n正则表达式匹配</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择。</comment>
+			</param>
+			<param id='separator'>
+				<name>数据分隔符</name>
+				<default>;</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据分隔符，输出值会以此分隔符来间隔数据。</comment>
+			</param>
+		</keyword>
+		<keyword id='database_loop_verify_data'>
+			<name>循环校验数据库结果集</name>
+			<comment>循环校验数据库结果集的正确性。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:loopVerifyData</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='sql'>
+				<name>SQL语句</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的SQL语句，输入举例：SELECT * FROM dual</comment>
+			</param>
+			<param id='maxTimeOut'>
+				<name>查询超时时间(ms)</name>
+				<default>0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>查询超时时间，单位为毫秒。防止出现诸如新增操作数据入库需要一段时间，在入库前即查询为空的场景，当查询为空时等待1s循环查询，直到设置的超时时间为止</comment>
+			</param>
+			<param id='maxLoopTimeOut'>
+				<name>循环查询超时时间(s)</name>
+				<default>3</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>循环查询超时时间，循环查询sql记录，若校验成功则退出，否则循环到循环查询超时时间为止。</comment>
+			</param>
+			<param id='row'>
+				<name>行号</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验数据行编号，从1开始计数，输入举例：1，当校验结果集时候，该选项填写ALL</comment>
+			</param>
+			<param id='column'>
+				<name>列名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验某数据列名称。</comment>
+			</param>
+			<param id='text'>
+				<name>预期文本</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期文本，请根据待指定的匹配模式根据分隔符输入</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values>true\r\nfalse</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values>精确匹配\r\n模糊匹配\r\n正则表达式匹配</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择。</comment>
+			</param>
+			<param id='separator'>
+				<name>数据分隔符</name>
+				<default>;</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据分隔符，输出值会以此分隔符来间隔数据。</comment>
+			</param>
+		</keyword>
+		<keyword id="database_verify_rowCount">
+			<name>校验数据库结果行数</name>
+			<comment>校验数据库查询结果的行数</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:verifyRowCount</implement>
+			<show>1</show>
+			<param id="data_set">
+				<name>结果集</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验结果集，通常设置《执行SQL查询》返回的变量值。</comment>
+			</param>
+			<param id="mode">
+				<name>匹配模式</name>
+				<default>等于</default>
+				<values>大于\r\n等于\r\n小于</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，实际行数与期望行数的比较</comment>
+			</param>
+			<param id="rowCount_exp">
+				<name>期望行数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>期望的行数</comment>
+			</param>
+		</keyword>
+		<keyword id="database_verify_rowCount_execute_sql">
+			<name>校验结果行数并执行SQL</name>
+			<comment>校验查询数据库结果行数,如符合预期则执行SQL</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:verifyRowCountExecuteSql</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id="data_set">
+				<name>结果集</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验结果集，通常设置《执行SQL查询》返回的变量值。</comment>
+			</param>
+			<param id="mode">
+				<name>匹配模式</name>
+				<default>等于</default>
+				<values>大于\r\n等于\r\n小于</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，实际行数与期望行数的比较</comment>
+			</param>
+			<param id="rowCount_exp">
+				<name>期望行数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>期望的行数</comment>
+			</param>
+			<param id='sql'>
+				<name>SQL语句</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的插入、修改、删除等非输出结果的SQL语句，注意只在上述结果集符合预期结果的场合执行</comment>
+			</param>
+		</keyword>
+		<keyword id='database_loop_verify_rowCount'>
+			<name>循环校验数据库结果行数</name>
+			<comment>循环校验数据库查询结果的行数。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:loopVerifyRowCount</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+			<param id='sql'>
+				<name>SQL语句</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的SQL语句，输入举例：SELECT * FROM dual</comment>
+			</param>
+			<param id='maxTimeOut'>
+				<name>SQL查询超时时间(ms)</name>
+				<default>0</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>查询超时时间，单位为毫秒。防止出现诸如新增操作数据入库需要一段时间，在入库前即查询为空的场景，当查询为空时等待1s循环查询，直到设置的超时时间为止</comment>
+			</param>
+			<param id='maxLoopTimeOut'>
+				<name>循环查询超时时间(s)</name>
+				<default>3</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>循环查询超时时间，循环查询sql记录，若校验成功则退出，否则循环到循环查询超时时间为止。</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>等于</default>
+				<values>大于\r\n等于\r\n小于</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，实际行数与期望行数的比较</comment>
+			</param>
+			<param id='rowCount_exp'>
+				<name>期望行数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>期望的行数</comment>
+			</param>
+		</keyword>
+		
+		
+		<keyword id='database_get_data'>
+			<name>获取数据库结果集内容</name>
+			<comment>获取数据库结果集的数据。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:getData</implement>
+			<show>1</show>
+			<param id='data_set'>
+				<name>结果集</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验结果集，通常设置《执行SQL查询》返回的变量值。</comment>
+			</param>
+			<param id='row'>
+				<name>行号</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验数据行编号，从1开始计数，输入举例：1，当想获取全集时，输入ALL</comment>
+			</param>
+			<param id='column'>
+				<name>列名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待校验某数据列名称。</comment>
+			</param>
+			<param id='value'>
+				<name>输出数据[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将数据集中对应的值存入该变量并保存在上下文待引用。输入举例：VAR_VALUE</comment>
+			</param>
+			<param id='separator'>
+				<name>数据分隔符</name>
+				<default>;</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据分隔符，输出值会以此分隔符来间隔数据。</comment>
+			</param>
+		</keyword>
+		<keyword id='database_close'>
+			<name>关闭数据库连接</name>
+			<comment>关闭数据库链接。</comment>
+			<implement>org.tn.qa.automation.keyword.DatabaseKeyword:close</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>数据库链接名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>用于区分打开的多个数据库链接，若仅需打开一个链接，别名可不输入</comment>
+			</param>
+		</keyword>
+	</group>
+	
+	<group name='Linux操作'>
+		<keyword id='linux_ssh_connect'>
+			<name>通过ssh协议连接linux服务器</name>
+			<comment>通过ssh协议方式连接linux服务器</comment>
+			<implement>org.tn.qa.automation.keyword.SshKeyword:connectSSH</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>Linux连接别名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>为将进行的linux连接起的别名</comment>
+			</param>
+			<param id='IP'>
+				<name>Linux服务器IP</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的LINUX服务器的IP</comment>
+			</param>
+			<param id='port'>
+				<name>Linux连接端口</name>
+				<default>22</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的LINUX服务器的连接端口，默认为SSH协议的端口22</comment>
+			</param>
+			<param id='user'>
+				<name>Linux连接登录名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的LINUX服务器的连接登录用户名</comment>
+			</param>
+			<param id='passwd'>
+				<name>Linux连接登录密码</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的LINUX服务器的连接登录密码</comment>
+			</param>
+			<param id='shellType'>
+				<name>Linux连接类型</name>
+				<default>exec</default>
+				<values>exec\r\nsftp\r\nshell</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的LINUX服务器的连接类型 </comment>
+			</param>
+		</keyword>
+		
+		<keyword id='linux_ssh_runCmd_WithoutResult'>
+			<name>执行Linux命令_无返回结果</name>
+			<comment>执行Linux命令，多用于不返回结果或对返回结果不做处理的命令</comment>
+			<implement>org.tn.qa.automation.keyword.SshKeyword:runCmdWithoutResult</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>Linux连接别名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>Linux连接的别名</comment>
+			</param>
+			<param id='cmd'>
+				<name>Linux命令</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的Linux命令。支持单个命令，也支持多个命令组合(命令之间用;间隔)。</comment>
+			</param>
+		</keyword>
+		
+		<keyword id='linux_ssh_runCmd_WithResult'>
+			<name>执行Linux命令_需返回结果</name>
+			<comment>执行Linux命令，多用于返回结果或需对返回结果做处理的命令</comment>
+			<implement>org.tn.qa.automation.keyword.SshKeyword:runCmdWithResult</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>Linux连接别名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>linux连接的别名</comment>
+			</param>
+			<param id='cmd'>
+				<name>Linux命令</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待执行的Linux命令。支持单个命令，也支持多个命令组合(命令之间用;间隔)。</comment>
+			</param>
+			<param id='result'>
+				<name>输出结果变量[OUT]</name>
+				<default>VAR_CmdResult</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将返回的Linux命令结果存入该变量并保存在上下文待引用。输入举例：VAR_CmdResult </comment>
+			</param>
+		</keyword>
+		
+		<keyword id='linux_ssh_close'>
+			<name>关闭Linux连接</name>
+			<comment>关闭Linux连接</comment>
+			<implement>org.tn.qa.automation.keyword.SshKeyword:closeSSH</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>Linux连接别名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>为将进行的linux连接起的别名</comment>
+			</param>
+		</keyword>
+		<keyword id='linux_ssh_getlog'>
+			<name>获取linux日志</name>
+			<comment>用例执行容错中获取linux日志关键字</comment>
+			<implement>org.tn.qa.automation.keyword.SshKeyword:getLogInfo</implement>
+			<show>1</show>
+			<param id='server'>
+				<name>Linux服务器IP</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='username'>
+				<name>用户名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='password'>
+				<name>密码</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='filePath'>
+				<name>文件路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>如：/home/automation/gomock/testlog/job1.log</comment>
+			</param>
+			<param id='rowNum'>
+				<name>显示行数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>例：-C 5 显示匹配字串那行以及上下5行;-B 5 显示匹配字串那行以及下5行;-A 5 显示匹配字串那行以及上5行</comment>
+			</param>
+			<param id='contains'>
+				<name>匹配字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>不填默认查该日志文件所有行</comment>
+			</param>
+			<param id='regex'>
+				<name>匹配正则表达式</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>如:[1-9]+,不填则默认启用匹配字符串</comment>
+			</param>
+			<param id='cmd'>
+				<name>自定义linux命令</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>命令启用时，匹配字符串、匹配正则表达式无效</comment>
+			</param>
+			<param id='result'>
+				<name>日志信息[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>筛选出的日志信息</comment>
+			</param>
+		</keyword>
+		
+	</group>
+	<group name='SAP操作'>
+		<keyword id='SAP_start_sap'>
+			<name>启动SAP：自定义应用程序服务器</name>
+			<comment>根据输入的消息服务器和系统编号打开SAP服务器，适用于"自定义应用程序服务器"连接方式</comment>
+			<implement>org.tn.qa.automation.keyword.SAPKeyword:startSAPByServerId</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>SAP连接别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>为将进行的SAP连接起的别名</comment>
+			</param>
+			<param id='IPAddr'>
+				<name>服务器IP</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的SAP服务器的IP</comment>
+			</param>
+			<param id='serverId'>
+				<name>系统编号</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的SAP服务器的连接系统编号</comment>
+			</param>
+			<param id='sapPath'>
+				<name>SAPgui路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>SAP客户端下SAPgui.exe的本地路径，如C:\Program Files\SAP\FrontEnd\SAPgui\SAPgui.exe </comment>
+			</param>
+		</keyword>
+		<keyword id='SAP_start_sap2'>
+			<name>启动SAP：组/服务器选择</name>
+			<comment>根据输入的消息服务器、服务器服务号以及组名打开SAP服务器，适用于"组/服务器选择"连接方式</comment>
+			<implement>org.tn.qa.automation.keyword.SAPKeyword:startSAPByGroup</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>SAP连接别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>为将进行的SAP连接起的别名</comment>
+			</param>
+			<param id='IPAddr'>
+				<name>服务器IP</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的SAP服务器的IP</comment>
+			</param>
+			<param id='server_Port'>
+				<name>服务器服务号</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的SAP服务器的服务号，比如3620，是在C:\WINDOWS\system32\drivers\etc\services中配置的系统标识QAS（sapmsQAS 3620/tcp）</comment>
+			</param>
+			<param id='group'>
+				<name>组/服务器值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待连接的SAP服务器的组/服务器值</comment>
+			</param>
+			<param id='sapPath'>
+				<name>SAPgui路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>SAP客户端下SAPgui.exe的本地路径，如C:\Program Files\SAP\FrontEnd\SAPgui\SAPgui.exe </comment>
+			</param>
+		</keyword>			
+		<keyword id='SAP_login_sap'>
+			<name>登录SAP</name>
+			<comment>根据输入的用户名和密码，登录SAP服务器。若已登录则不关闭已登录的继续登录</comment>
+			<implement>org.tn.qa.automation.keyword.SAPKeyword:loginSAP</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>SAP连接别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>已打开的SAP连接的别名</comment>
+			</param>
+			<param id='sapUser'>
+				<name>SAP用户名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>SAP用户名</comment>
+			</param>
+			<param id='sapPasswd'>
+				<name>SAP密码</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>SAP密码</comment>
+			</param>
+		</keyword>		
+		<keyword id='SAP_stop_sap'>
+			<name>关闭SAP</name>
+			<comment></comment>
+			<implement>org.tn.qa.automation.keyword.SAPKeyword:stopSAP</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>SAP连接别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>已打开的SAP连接的别名</comment>
+			</param>
+		</keyword>
+		<keyword id='SAP_input_TransactionCode'>
+			<name>输入事务代码</name>
+			<comment></comment>
+			<implement>org.tn.qa.automation.keyword.SAPKeyword:inputTransactionCode</implement>
+			<show>1</show>
+			<param id='alias'>
+				<name>SAP连接别名</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>已打开的SAP连接的别名</comment>
+			</param>
+		  <param id='transCode'>
+				<name>事务代码</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待输入的事务代码，如se37 或者 /nse37</comment>
+			</param>
+		</keyword>
+	</group>
+	<group name='其它通用操作'>
+		<keyword id='web_common_sleep'>
+			<name>等待时间</name>
+			<comment>在进行下一操作前，等待一段时间</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:sleep</implement>
+			<show>1</show>
+			<param id='millis'>
+				<name>等待时间</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>等待时间（毫秒）,Eg:等待5秒，请输入5000</comment>
+			</param>	
+		</keyword>
+		<keyword id='common_generate_timestamp'>
+			<name>生成当前时间戳字符</name>
+			<comment>按照指定格式生成当前时间戳字符</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:generateTimestamp</implement>
+			<show>1</show>
+			<param id='format'>
+				<name>格式定义</name>
+				<default>yyyy-MM-dd HH:mm:ss</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>格式定义</comment>
+			</param>
+			<param id='reference'>
+				<name>输出变量名称[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，修改后的头域存入该变量并保存在上下文待引用。输入举例：VAR_REF</comment>
+			</param>
+		</keyword>
+		<keyword id='pricecenter_get_date_Fromnowon'>
+			<name>获取当天后若干天的日期</name>
+			<comment>当天之后某一天的日期，格式为“XXXX-XX-XX，分隔符为-”</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:getDateFromNowOn</implement>
+			<show>1</show>
+			<param id='time_span'>
+				<name>天数</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<comment>当天之后某一天之间的日期</comment>
+			</param>
+			<param id='dates_string'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_dates_string</default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将获取的时间字符串，保存至该变量并放入上下文中待引用。格式：var_dates_string</comment>
+			</param>
+			<param id='time_format'>
+				<name>日期格式</name>
+				<default>yyyy-MM-dd</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>日期格式，日期会以该格式输出。\r\n格式有 yy/MM/dd HH:mm:ss 如 '2002/1/1 17:55:00' \r\nyy/MM/dd HH:mm:ss pm 如 '2002/1/1 17:55:00 pm'\r\nyy-MM-dd HH:mm:ss 如 '2002-1-1 17:55:00' \r\nyy-MM-dd HH:mm:ss am 如 '2002-1-1 17:55:00 am' </comment>
+			</param>
+		</keyword>
+		<keyword id='pricecenter_get_date_Fromnowon1'>
+			<name>获取当天后若干天的日期（如果月日小于10，前面不加0）</name>
+			<comment>当天之后某一天的日期，格式为“XXXX-XX-XX，分隔符为-”如果月日小于10，前面不加0</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:getDateFromNowOn1</implement>
+			<show>1</show>
+			<param id='time_span'>
+				<name>天数</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<comment>当天之后某一天之间的日期</comment>
+			</param>
+			<param id='dates_string'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_dates_string</default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将获取的时间字符串，保存至该变量并放入上下文中待引用。格式：var_dates_string</comment>
+			</param>
+			<param id='time_format'>
+				<name>日期格式</name>
+				<default>yyyy-MM-dd</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>日期格式，日期会以该格式输出。\r\n格式有 yy/MM/dd HH:mm:ss 如 '2002/1/1 17:55:00' \r\nyy/MM/dd HH:mm:ss pm 如 '2002/1/1 17:55:00 pm'\r\nyy-MM-dd HH:mm:ss 如 '2002-1-1 17:55:00' \r\nyy-MM-dd HH:mm:ss am 如 '2002-1-1 17:55:00 am' </comment>
+			</param>
+		</keyword>
+		<keyword id='pricecenter_get_dates_Fromnowon'>
+			<name>获取当天及当天之后几天的日期</name>
+			<comment>从当天到当天之后某一日期之间的日期，格式为“XXXX-XX-XX,XXXX-XX-XX,...,XXXX-XX-XX”</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:getDatesFromNowOn</implement>
+			<show>1</show>
+			<param id='time_span'>
+				<name>天数</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<comment>从当天到当天之后某一日期之间的日期</comment>
+			</param>
+			<param id='dates_string'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_dates_string</default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将获取的时间字符串，保存至该变量并放入上下文中待引用。格式：var_dates_string
+				</comment>
+			</param>
+			<param id='time_format'>
+				<name>日期格式</name>
+				<default>yyyy-MM-dd</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>日期格式，日期会以该格式输出。\r\n格式有 yy/MM/dd HH:mm:ss 如 '2002/1/1 17:55:00' \r\nyy/MM/dd HH:mm:ss pm 如 '2002/1/1 17:55:00 pm'\r\nyy-MM-dd HH:mm:ss 如 '2002-1-1 17:55:00' \r\nyy-MM-dd HH:mm:ss am 如 '2002-1-1 17:55:00 am' </comment>
+			</param>
+			<param id='string_separator'>
+				<name>字符串分隔符</name>
+				<default>,</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>字符串分隔符，如分隔符为；，输出为2014-12-14；2014-12-15。</comment>
+			</param>
+		</keyword>
+		<keyword id='pricecenter_create_price_RandomNum'>
+			<name>数字随机生成</name>
+			<comment>生成一个数字0~9组合的随机数字</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:createPriceRandomNum</implement>
+			<show>1</show>
+			<param id='length'>
+				<name>字符长度</name>
+				<default>20</default>
+				<values></values>
+				<required>T</required>
+				<comment>生成一个由0~9的组成的随机数字</comment>
+			</param>
+			<param id='randomNum'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_randomNum</default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将获取的需要长度的随机数字，保存至该变量并放入上下文中待引用。格式：var_randomNum
+				</comment>
+			</param>
+		</keyword>
+
+		<keyword id='common_get_LocalHost_IPAddress'>
+			<name>获取本机IP地址</name>
+			<comment>获取本机IP地址</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:getLocalHostIPAddress</implement>
+			<show>1</show>
+			<param id='localIP'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_localIP</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的本机IP地址存入该变量并保存在上下文待引用。输入举例：VAR_LOCALIP</comment>
+			</param>
+		</keyword>
+		<keyword id='common_verify_String'>
+			<name>字符串校验</name>
+			<comment>校验字符串，比如控件的文本内容，数字也可以用此方法校验</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:verifyString</implement>
+			<show>1</show>
+			<param id='text'>
+				<name>文本内容</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>想要校验的文本内容</comment>
+			</param>
+			<param id='expect'>
+				<name>期望值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>期望文本的值,除特例外均正常输入。特例：若期望文本为null，可输入String.Null;若期望文本为空字符串""，可输入String.Empty</comment>
+			</param>
+			<param id='matched'>
+				<name>预期结果</name>
+				<default>true</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>预期的匹配结果，若期望匹配成功，请选择true；若期望匹配失败，请选择false</comment>
+			</param>
+			<param id='mode'>
+				<name>匹配模式</name>
+				<default>精确匹配</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>匹配模式，请根据实际需要选择。【精确匹配、模糊匹配、正则表达式匹配、大于、小于、大于等于、小于等于】</comment>
+			</param>
+		</keyword>
+		<keyword id='common_create_RandomNum'>
+			<name>字符串随机生成</name>
+			<comment>生成一个英文字母a~z和数字0~9组合的随机字符串</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:creatRandomNum</implement>
+			<show>1</show>
+			<param id='length'>
+				<name>字符长度</name>
+				<default>20</default>
+				<values></values>
+				<required>T</required>
+				<comment>生成一个由字母加数字的随机字符串</comment>
+			</param>
+			<param id='randomNum'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_randomNum</default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将获取的需要长度的随机字符串，保存至该变量并放入上下文中待引用。格式：var_randomNum</comment>
+			</param>	
+		</keyword>
+		<keyword id='common_sreplace_Str'>
+			<name>字符串替换</name>
+			<comment>替换给出字符串中的某个或某多个字符组合得出新的字符串，如abcdefgh，使用a替换ef，将得到abcdagh</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:replaceStr</implement>
+			<show>1</show>
+			<param id='fromStr'>
+				<name>原字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待替换的原字符串</comment>
+			</param>
+			<param id='oldChar'>
+				<name>待被替换的字符/组合</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>原字符串中待被替换的字符/字符组合</comment>
+			</param>
+			<param id='newChar'>
+				<name>替换成的字符/组合</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>原字符串中将被替换成的字符/字符组合</comment>
+			</param>
+			<param id='toStr'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_repValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将已被替换过的字符串存入该变量并保存在上下文待引用。输入举例：var_repValue</comment>
+			</param>
+		</keyword>
+		<keyword id='string_get_split_string'>
+			<name>获取分割字符串</name>
+			<comment>按照分隔符分割字符串，获取分割后数组的第n个字符串。</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:getSplitString</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待分割字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待分割字符串</comment>
+			</param>
+			<param id='value'>
+				<name>属性值[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将获取的值存入该变量并保存在上下文待引用。输入举例：VAR_VALUE</comment>
+			</param>
+			<param id='number'>
+				<name>第n个字符串</name>
+				<default>请输入数字</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数字n，n从0开始计数</comment>
+			</param>
+			<param id='mode'>
+				<name>从开始或结尾计数</name>
+				<default>请选择</default>
+				<values>开始\r\n结尾</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>从开始位或结尾计数</comment>
+			</param>
+			<param id='separator'>
+				<name>数据分隔符</name>
+				<default>;</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据分隔符，字符串会以此分隔符来分割。</comment>
+			</param>
+		</keyword>		
+		<keyword id='common_subString_BetweenBeginAndEnd'>
+			<name>截取从指定开始位至结束位间的字符串</name>
+			<comment>截取从指定位开始至指定位之间的字符串，开始位从0开始计数，截取的字符串包含开始位但不包含结束位字符。如abcdefgh，开始截取位1，结束截取位4，结果为bcd。</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:subStringBetweenBeginAndEnd</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待截取字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的字符串</comment>
+			</param>
+			<param id='beginIndex'>
+				<name>截取开始位</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的开始位，字符串从0开始计数，且截取的字符串包含开始位字符</comment>
+			</param>
+			<param id='endIndex'>
+				<name>截取结束位</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的结束位，从0开始计数，但截取的字符串不包含结束位字符</comment>
+			</param>
+			<param id='sepValue'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_sepValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将截取的字符串存入该变量并保存在上下文待引用。输入举例：var_sepValue</comment>
+			</param>
+		</keyword>
+		<keyword id='common_subString_ByLength'>
+			<name>截取从指定位开始及长度的字符串</name>
+			<comment>截取从指定位开始及指定长度的字符串，开始位从0开始计数，截取的字符串包含开始位。如abcdefgh，开始截取位1，结束截取位4，结果为bcde。</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:subStringByLength</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待截取字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的字符串</comment>
+			</param>
+			<param id='beginIndex'>
+				<name>截取开始位</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的开始位，字符串从0开始计数，且截取的字符串包含开始位字符</comment>
+			</param>
+			<param id='length'>
+				<name>截取长度</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的字符串长度</comment>
+			</param>
+			<param id='sepValue'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_sepValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将截取的字符串存入该变量并保存在上下文待引用。输入举例：var_sepValue</comment>
+			</param>
+		</keyword>
+		<keyword id='common_subString_ByBegin'>
+			<name>截取从指定位开始至末尾的全部字符</name>
+			<comment>截取从指定位开始至末尾的的全部字符，开始位从0开始计数，截取的字符串包含开始位。如abcdefgh，开始截取位1，结果为bcdefgh。</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:subStringByBegin</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待截取字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的字符串</comment>
+			</param>
+			<param id='beginIndex'>
+				<name>截取开始位</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的开始位，字符串从0开始计数，且截取的字符串包含开始位字符</comment>
+			</param>
+			<param id='sepValue'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_sepValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将截取的字符串存入该变量并保存在上下文待引用。输入举例：var_sepValue</comment>
+			</param>
+		</keyword>
+		<keyword id='common_subString_ByEnd'>
+			<name>截取从末尾开始，指定长度的字符串</name>
+			<comment>截取从末尾开始，指定长度的字符串，开始位从1开始计数，。如abcdefgh，开始截取位1，结果为h。</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:subStringByEnd</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待截取字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的字符串</comment>
+			</param>
+			<param id='endIndex'>
+				<name>获取的字符串长度</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>获取的字符串长度，字符串从1开始计数</comment>
+			</param>
+			<param id='sepValue'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_sepValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将截取的字符串存入该变量并保存在上下文待引用。输入举例：var_sepValue</comment>
+			</param>
+		</keyword>
+		<keyword id='common_subString_ByBeginAndLength'>
+			<name>截取从指定位开始，字符串长度减去指定长度的字符串</name>
+			<comment>截取从指定位开始，字符串长度倒数第n位结束，。如abcdefgh，开始截取位1，结束位为2，结果为abcdef。</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:subStringByBeginAndLength</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待截取字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待截取的字符串</comment>
+			</param>
+			<param id='beginIndex'>
+				<name>截取开始位</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>获取的字符串长度，字符串从1开始计数</comment>
+			</param>
+			<param id='length'>
+				<name>字符串长度减去length结束</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>获取的字符串长度，字符串长度减去length结束</comment>
+			</param>
+			<param id='sepValue'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_sepValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将截取的字符串存入该变量并保存在上下文待引用。输入举例：var_sepValue</comment>
+			</param>
+		</keyword>
+		<keyword id='common_data_calc'>
+			<name>数值计算</name>
+			<comment>根据给出的计算方式，将2个整型/浮点型数值进行加减乘除的计算，并将计算结果保存在上下文变量中</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:dataCalc</implement>
+			<show>1</show>
+			<param id='data1'>
+				<name>数值1</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据1，可以理解为被加数/被减数/被乘数/被除数，必须为整型/浮点型字符串</comment>
+			</param>
+			<param id='data2'>
+				<name>数值2</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据2，可以理解为加数/减数/乘数/除数，必须为整型/浮点型字符串</comment>
+			</param>
+			<param id='operator'>
+				<name>计算方式</name>
+				<default>加</default>
+				<values>加\r\n减\r\n乘\r\n除</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>2个数据之间的计算方式</comment>
+			</param>
+			<param id='separator'>
+				<name>分隔符</name>
+				<default></default>
+				<values></values>
+				<required>F</required>
+				<datapool></datapool>
+				<comment>数组分隔符，数值1和数值2若为数组，以分隔符分隔</comment>
+			</param>
+			<param id='targetData'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_calcValue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将计算的最终结果的字符串存入该变量并保存在上下文待引用。输入举例：var_calcValue</comment>
+			</param>
+		</keyword>
+		<keyword id='common_data_compare'>
+			<name>数值比较</name>
+			<comment>校验2个整型/浮点型数值比较结果是否与期望结果一致，不一致则抛出错误</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:compareToData</implement>
+			<show>1</show>
+			<param id='data1'>
+				<name>数值1</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据1，必须为整型/浮点型字符串</comment>
+			</param>
+			<param id='data2'>
+				<name>数值2</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据2，必须为整型/浮点型字符串</comment>
+			</param>
+			<param id='expResult'>
+				<name>期望结果</name>
+				<default>大于</default>
+				<values>大于\r\n等于\r\n小于\r\n不等于</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>2个数据之间的期望大小。eg：“大于”表示（数据1 > 数据2）</comment>
+			</param>
+		</keyword>
+		<keyword id='common_data_compare1'>
+			<name>数值比较(大于等于或小于等于)</name>
+			<comment>校验2个整型数值比较结果是否与期望结果一致，不一致则抛出错误</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:compareToData1</implement>
+			<show>1</show>
+			<param id='data1'>
+				<name>数值1</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据1，必须为整型字符串</comment>
+			</param>
+			<param id='data2'>
+				<name>数值2</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据2，必须为整型字符串</comment>
+			</param>
+			<param id='expResult'>
+				<name>期望结果</name>
+				<default>大于等于</default>
+				<values>大于等于\r\n小于等于</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>2个数据之间的期望大小。eg：“大于等于”表示（数据1 >= 数据2）</comment>
+			</param>
+		</keyword>
+		<keyword id='common_date_compare'>
+			<name>两个时间日期相减</name>
+			<comment>两个时间日期相减</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:compareDate</implement>
+			<show>1</show>
+			<param id='date1'>
+				<name>减数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据1，时间格式</comment>
+			</param>
+			<param id='date2'>
+				<name>被减数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数据2，时间格式</comment>
+			</param>
+			<param id='dateFormat'>
+				<name>选择格式</name>
+				<default>yyyy-MM-dd HH:mm:ss</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数为分,时间格式为yyyy-MM-dd HH:mm:ss\r\nyyyy-MM-dd HH:mm\r\nHH:mm:ss\r\nHH:mm\r\nyyyy-MM-dd</comment>
+			</param>
+			<param id='out'>
+				<name>输出变量</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>返回参数为分</comment>
+			</param>
+		</keyword>
+	
+		<keyword id='common_calculateResidue'>
+			<name>计算余数</name>
+			<comment>计算两个整数相除之后的余数，如果余数为0，返回被除数</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:calculateResidue</implement>
+			<show>1</show><param id="dividend">
+				<name>被除数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>正整数</comment>
+			</param>
+			<param id='divisor'>
+				<name>除数</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>非零正整数</comment>
+			</param>
+			
+			<param id='residue'>
+				<name>输出变量名称[OUT]</name>
+				<default>var_residue</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>求得的余数</comment>
+			</param>
+		</keyword>
+		<keyword id='setVariable'>
+			<name>自定义变量</name>
+			<comment>通过自定义变量的方法设置变量值，如果需要变量作用域在单个用例级有效，需要在用例后处理加上"删除自定义变量"；也可以通过该方法修改全局变量值（但是无法删除全局变量）</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:setVariable</implement>
+			<show>1</show>
+			<param id='varName'>
+				<name>变量名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待设置的变量名称</comment>
+			</param>
+			<param id='varValue'>
+				<name>变量值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>设置变量的取值</comment>
+			</param>
+		</keyword>
+		<keyword id="common_in_range">
+			<name>In Range</name>
+			<comment>使用数字构造数组</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:InRange</implement>
+			<show>1</show>
+			<param id="value">
+				<name>变量名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待设置的变量名称</comment>
+			</param>
+			<param id="startnumber">
+				<name>起始值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>起始值</comment>
+			</param>
+			<param id="number">
+				<name>数组长度</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数组长度为2，返回结果为[0,1];数组长度为9，返回结果为[0,1,...,8];</comment>
+			</param>
+			<param id="seperator">
+				<name>数组分隔符</name>
+				<default>,</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>数组分隔符</comment>
+			</param>
+		</keyword>
+	  <!--
+		<keyword id='removeVariable'>
+			<name>删除自定义变量</name>
+			<comment>删除自定义变量，删除之后该变量失效(现在已经不需要，局部变量在用例执行结束时统一清理)</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:removeVariable</implement>
+			<show>1</show>
+			<param id='varName'>
+				<name>变量名</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待删除的变量名称</comment>
+			</param>	
+		</keyword>
+		-->
+		<keyword id='logPrint'>
+			<name>日志打印</name>
+			<comment>通过自定义内容打印日志信息</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:logPrint</implement>
+			<show>1</show>
+			<param id='logLevel'>
+				<name>日志级别</name>
+				<default>info</default>
+				<values>info\r\ndebug\r\nwarn\r\nerror</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待设置的日志级别</comment>
+			</param>
+			<param id='message'>
+				<name>日志内容</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待打印的日志内容</comment>
+			</param>
+		</keyword>
+		<keyword id='getMd5'>
+			<name>MD5加密</name>
+			<comment>通过MD5加密方法实现字符串加密，将加密后的密文字符串输出变量</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:getMd5</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待加密明文</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待加密明文字符串，如：123456abc</comment>
+			</param>
+			<param id='result'>
+				<name>加密密文[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出加密后的密文为变量</comment>
+			</param>
+		</keyword>
+		<keyword id='toUrl'>
+			<name>中文转url</name>
+			<comment>把中文转换成url字符串</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:toUrl</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待转换中文</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待转换中文，如：大家好</comment>
+			</param>
+			<param id='result'>
+				<name>url编码[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出url编码</comment>
+			</param>
+		</keyword>
+		<keyword id='decodeUrl'>
+			<name>url转中文</name>
+			<comment>把中文转换成url字符串</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:decodeUrl</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待转换字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待转换字符串，如：%e4%bd%a0%e5%a5%bd</comment>
+			</param>
+			<param id='result'>
+				<name>中文[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出中文字符串</comment>
+			</param>
+		</keyword>
+		<keyword id='toUnicode'>
+			<name>中文转Unicode编码</name>
+			<comment>把中文转换成unicode编码</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:toUnicode</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待转换中文</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待转换中文，如：大家好</comment>
+			</param>
+			<param id='result'>
+				<name>unicode编码[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出unicode编码</comment>
+			</param>
+		</keyword>
+		<keyword id='decodeUnicode'>
+			<name>Unicode转中文</name>
+			<comment>把中文转换成url字符串</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:decodeUnicode</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待转换字符串</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待转换中文，如：\u5df2\u67e5\u8be2\u5230\u8bb0\u5f55</comment>
+			</param>
+			<param id='result'>
+				<name>中文字符串[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出中文字符串</comment>
+			</param>
+		</keyword>
+		<keyword id='base64加密'>
+			<name>base64编码</name>
+			<comment>通过base64编码方法实现字符串加密，将加密后的密文字符串输出变量</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:base64Encode</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待加密明文</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待加密明文字符串，如：123456abc</comment>
+			</param>
+			<param id='result'>
+				<name>加密密文[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出加密后的密文为变量</comment>
+			</param>
+		</keyword>
+		<keyword id='base64解密'>
+			<name>base64解码</name>
+			<comment>通过base64解码方法实现字符串加密，将加密后的密文字符串输出变量</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:base64Decode</implement>
+			<show>1</show>
+			<param id='string'>
+				<name>待解密密文</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待解密密文字符串，如：123456abc</comment>
+			</param>
+			<param id='result'>
+				<name>明文[OUT]</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出解密后的明文为变量</comment>
+			</param>
+		</keyword>
+		<keyword id='id_card_creat'>
+			<name>生成身份证号</name>
+			<comment>生成省市区编号固定的18位身份证号</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:idCardCreat</implement>
+			<show>1</show>
+			<param id='idCardNum'>
+				<name>身份证号</name>
+				<default>var_idCardNum</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>输出变量名称，将生成的18位身份证号存入该变量并保存在上下文待引用。输入举例：var_idCardNum</comment>
+			</param>
+		</keyword>
+		<keyword id='ommon_pic_checkPicIsExisted'>
+			<name>获取页面图片原址请求响应码</name>
+			<comment>获取某页面所有图片的原址的请求响应消息码存储上下文中。前提需打开要验证此功能的页面</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:checkPicIsExisted</implement>
+			<show>1</show>
+			<param id='errorURL'>
+				<name>输出变量名称[OUT]</name>
+				<default>VAR_RespCode</default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将图片原址请求响应消息码，保存至该变量并放入上下文中待引用。缺省为VAR_RespCode，可更改。配合通用方法生成CSV文件使用。内容格式形如：1,http://www.sdfsdfsdf,状态:200|2,http://www.sdfsdfsdf,状态:404</comment>
+			</param>
+	    </keyword>		
+	    <keyword id='ommon_pic_checkSinglePicIsExisted'>
+			<name>校验单张图片的响应码</name>
+			<comment>校验单张图片的响应码</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:checkSinglePicIsExisted</implement>
+			<show>1</show>
+			<param id='imgurl'>
+				<name>图片url</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<comment>输出变量名称-将图片原址请求响应消息码，保存至该变量并放入上下文中待引用。缺省为VAR_RespCode，可更改。配合通用方法生成CSV文件使用。内容格式形如：1,http://www.sdfsdfsdf,状态:200|2,http://www.sdfsdfsdf,状态:404</comment>
+			</param>
+	    </keyword>
+		<keyword id='common_CSVFile_create'>
+			<name>生成并保存数据至CSV文件</name>
+			<comment>生成CSV文件至本地或工程目录下，并保存其表头及数据至该CSV文件中</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:createCSVToSaveData</implement>
+			<show>1</show>
+			<param id='FilePosition'>
+				<name>文件位置</name>
+				<default>工程</default>
+				<values>工程\r\n本地</values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待生成CSV文件的位置，默认为工程路径下，可选择为本地</comment>
+			</param>
+			<param id='filePath'>
+				<name>文件路径</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待生成文件的路径及文件名。当文件位置选择为工程时，路径格式举例：/File/CsvData.csv,其中File目录必须存在;当文件位置选择本地时，路径格式举例：C:\CsvData.csv</comment>
+			</param>
+			<param id='tableHead'>
+				<name>表头</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待保存数据的表头，单元格之间请用英文逗号,隔开。举例: 商品编码,商品名称,备注</comment>
+			</param>
+			<param id='tableData'>
+				<name>表数据</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>待保存数据的内容，单元格之间用英文逗号隔开，数据行与行之间使用|隔开；
+        举例1-1行数据：104009760,商品001,自动化测试用
+        举例2-2行数据：104009760,商品001,自动化测试|104009761,商品002,手工测试用</comment>
+			</param>
+		</keyword>
+		<keyword id='validateifelse'>
+			<name>判定关键字(输出值数量固定)</name>
+			<comment>如果匹配输出a1,a2不匹配输出a11,a22</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:validateifelse</implement>
+			<show>1</show>
+			<param id='iLen'>
+				<name>获取的值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='Len'>
+				<name>预期值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='a1'>
+				<name>如果符合预期，赋的第一个值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='a11'>
+				<name>如果不符合预期，赋的第一个值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='a2'>
+				<name>如果符合预期，赋的第二个值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='a22'>
+				<name>如果不符合预期，赋的第二个值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='output1'>
+				<name>第一个值输出变量</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='output2'>
+				<name>第二个值输出变量</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+		</keyword>
+		<keyword id='validateifelserandom'>
+			<name>判定关键字(返回list)</name>
+			<comment>如果匹配输出a1,不匹配输出a2</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:validateifelserandom</implement>
+			<show>1</show>
+			<param id='iLen'>
+				<name>获取的值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='Len'>
+				<name>预期值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='a1'>
+				<name>如果符合预期，赋的第一个值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='a11'>
+				<name>如果不符合预期，赋的第一个值</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+			<param id='output1'>
+				<name>第一个值输出变量</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment></comment>
+			</param>
+		</keyword>
+		<keyword id='intervalRandomNum'>
+			<name>获取指定区间的随机整数</name>
+			<comment>根据指定的上下区间值，获取指定区间的随机整数</comment>
+			<implement>org.tn.qa.automation.keyword.CommonKeyword:intervalRandomNum</implement>
+			<show>1</show>
+			<param id='startNum'>
+				<name>区间开始值</name>
+				<default>1</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>指定区间的起点</comment>
+			</param>
+			<param id='endNum'>
+				<name>区间结束值</name>
+				<default>10</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>指定区间的终点</comment>
+			</param>
+			<param id='randomNum'>
+				<name>输出变量[OUT]</name>
+				<default>var_randomNum</default>
+				<values></values>
+				<required>T</required>
+				<datapool></datapool>
+				<comment>保存获取到的随机数，用于上下文</comment>
+			</param>
+		</keyword>
+	</group>
+
+</group>
+	</root>

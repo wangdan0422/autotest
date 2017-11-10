@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<title>Automation Test Report</title>
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxlayout.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxgrid.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxtabbar.css" />
+	<link rel="STYLESHEET" type="text/css" href="../codebase/dhtmlxchart.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxwindows.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxlayout_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxgrid_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxaccordion_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/skins/dhtmlxwindows_dhx_skyblue.css" />
+	<link rel="stylesheet" type="text/css" href="../codebase/dhtmlxtabbar.css"/>
+	
+	<script src="../codebase/dhtmlxcommon.js"></script>
+	<script src="../codebase/dhtmlxtabbar.js"></script>
+	<script src="../codebase/dhtmlxtabbar_start.js"></script>
+
+	<script src="../codebase/dhtmlxcommon.js"></script>
+	<script src="../codebase/dhtmlxlayout.js"></script>
+	<script src="../codebase/dhtmlxcontainer.js"></script>
+
+	<script src="../codebase/dhtmlxgrid.js"></script>
+	<script src="../codebase/dhtmlxgridcell.js"></script>
+	<script src="../codebase/dhtmlxaccordion.js"></script>
+	<script src="../codebase/dhtmlxtabbar.js"></script>
+    <script src="../codebase/dhtmlxchart.js"></script>
+	<script src="../codebase/dhtmlxwindows.js"></script>
+
+	<script  src="../codebase/dhtmlxgridcell.js"></script>    
+	<script  src="../codebase/excells/dhtmlxgrid_excell_link.js"></script>
+
+    <script src="data/summary.js"></script>
+	
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden;
+		}
+
+	   .label{
+        background-color:#ffffff;
+        -moz-border-radius:4px;
+        -ms-border-radius:4px;
+        -webkit-border-radius:4px;
+        border-radius:4px;
+        height:15px;
+        line-height:15px;
+        font-size: 9px;
+        width:25px;
+        text-align:center;
+    }
+
+	</style>
+	<script>
+		var passedGrid, failedGrid, skippedGrid, bcGrid, bmGrid, tsGrid, amGrid, acGrid;
+		
+		var dhxLayout;
+		function doOnLoad() {
+			dhxLayout = new dhtmlXLayoutObject(document.body, "3U");
+			dhxLayout.attachHeader("title");
+			dhxLayout.cells("a").setText("Result Info");
+			dhxLayout.cells("a").setWidth(450);
+			dhxLayout.cells("b").hideHeader();
+			dhxLayout.cells("c").hideHeader();
+
+	    var chartConfig = {
+	        view: "donut",
+	        container: "chart",
+	        value: "#count#",
+			labelOffset: 7,
+			pieInnerText:function(obj){
+			return "<div class='text'>" + obj.count + "</div>";
+			},
+	        label: function(obj) {
+	            var sum = chart.sum("#count#");
+	            var text = Math.round(parseFloat(obj.count) / sum * 100) + "%";
+	            return "<div class='label' style='border:1px solid " + obj.color + "'>" + text + "</div>";
+	        },
+	        color: "#color#",
+	        legend: {
+	            width: 75,
+	            align: "right",
+	            valign: "middle",
+	            template: "#desc#"
+	        },
+	        gradient: 1
+	    };
+	    var chart = dhxLayout.cells("a").attachChart(chartConfig);
+	    chart.parse(sum_data, "json");
+
+	dhxAccord = dhxLayout.cells("b").attachAccordion();
+    dhxAccord.addItem("a1", "<img src='../codebase/passed.png'/> Passed Test");
+    dhxAccord.addItem("a2", "<img src='../codebase/failed.png'/> Failed Test");
+    dhxAccord.addItem("a3", "<img src='../codebase/skipped.png'/> Skipped Test");
+    dhxAccord.openItem("a2");
+
+    passedGrid = dhxAccord.cells("a1").attachGrid();
+    passedGrid.setSkin("dhx_skyblue");
+    passedGrid.setImagePath("../codebase/imgs/");
+    passedGrid.loadXML("data/passed_test.xml");
+	passedGrid.attachEvent("onRowSelect", doPassedOnRowSelected);
+
+    failedGrid = dhxAccord.cells("a2").attachGrid();
+    failedGrid.setSkin("dhx_skyblue");
+    failedGrid.setImagePath("../codebase/imgs/");
+    failedGrid.loadXML("data/failed_test.xml");
+	failedGrid.attachEvent("onRowSelect", doFailedOnRowSelected);
+
+    skippedGrid = dhxAccord.cells("a3").attachGrid();
+    skippedGrid.setSkin("dhx_skyblue");
+    skippedGrid.setImagePath("../codebase/imgs/");
+    skippedGrid.loadXML("data/skipped_test.xml");
+	skippedGrid.attachEvent("onRowSelect", doSkippedOnRowSelected);
+
+    logGrid = dhxLayout.cells("c").attachGrid();
+	logGrid.setSkin("dhx_skyblue");
+	logGrid.setImagePath("../codebase/imgs/");
+
+	dhxWins = new dhtmlXWindows();
+    dhxWins.enableAutoViewport(false);
+	dhxWins.attachViewportTo(document.body);
+    dhxWins.setImagePath("../codebase/imgs/");
+
+		}
+
+function createStackTraceWindow(path) {
+
+    var id = "StackTrace: " + path;
+	if (dhxWins.window(id) == null)
+	{
+		dhxWins.createWindow(id, 10, 10, 800, 600);
+		dhxWins.window(id).setText(id);
+		dhxWins.window(id).attachURL(path);
+	}
+	else
+	{
+		dhxWins.window(id).bringToTop();
+	}
+}
+		
+function createSnapShotWindow(path) {
+
+    var id = "SnapShot: " + path;
+	if (dhxWins.window(id) == null)
+	{
+		dhxWins.createWindow(id, 10, 10, 800, 600);
+		dhxWins.window(id).setText(id);
+		dhxWins.window(id).attachHTMLString("<img width='100%' src='" + path + "' />");
+	}
+	else
+	{
+		dhxWins.window(id).bringToTop();
+	}
+}
+
+function doPassedOnRowSelected(id) {
+
+	var logPath = passedGrid.cellById(id, 1).getValue();
+
+	loadLogGrid(logPath);
+
+}
+
+function doFailedOnRowSelected(id) {
+
+	var logPath = failedGrid.cellById(id, 1).getValue();
+
+	loadLogGrid(logPath);
+}
+
+function doSkippedOnRowSelected(id) {
+
+	var logPath = skippedGrid.cellById(id, 1).getValue();
+
+	loadLogGrid(logPath);
+}
+
+function loadLogGrid(logPath)
+{
+	logGrid.loadXML("data/" + logPath);
+}
+	</script>
+</head>
+<body onload="doOnLoad();">
+	<div id="title" style="height: 40px;font-size: 35px;font-weight:700;text-align: center;">Test Results</div>
+
+</body>
+</html>

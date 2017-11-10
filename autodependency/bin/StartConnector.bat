@@ -1,0 +1,1 @@
+chcp 65001 && title AutoClient && color F2 && java -XX:MaxPermSize=512M -Dfile.encoding=UTF-8  -jar -Dautomation.app.path=../../ ../lib/application/connector-2.0.jar
