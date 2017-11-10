@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="TAP用户指南" topic="help/doc/toc.htm">
+	<topic href="help/doc/StartInstall/InstallStart.htm" label="01.TAP工具安装及使用说明书">
+    <topic href="help/doc/StartInstall/InstallStart.htm#anzhuang" label="1.工具安装">
+       <topic href="help/doc/StartInstall/InstallStart.htm#baohuoqu" label="1.1 工具包获取">
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#baoanzhuang" label="1.2 工具包安装">
+          <topic href="help/doc/StartInstall/InstallStart.htm#JDKanzhuang" label="1.2.1 JDK安装">
+             <topic href="help/doc/StartInstall/InstallStart.htm#shuangjiJDK" label="1.2.1.1 双击JDK安装包进行安装">
+             </topic>
+             <topic href="help/doc/StartInstall/InstallStart.htm#peizhiJDK" label="1.2.1.2 配置JDK环境变量">
+             </topic>
+             <topic href="help/doc/StartInstall/InstallStart.htm#yanzhengJDK" label="1.2.1.3 验证JDK安装成功">
+             </topic>
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#jieyasuo" label="1.2.2 工具包解压缩">
+          </topic>
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#yunxing" label="1.3 工具运行">
+          <topic href="help/doc/StartInstall/InstallStart.htm#shuangjieclipse" label="1.3.1双击安装包目录下的eclipse.exe运行工具">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#xuanzeworkspace" label="1.3.2选择workspace">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#dianjiworkbeach" label="1.3.3点击WorkBench，打开空白的工作区间">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#qiehuanshitu" label="1.3.4切换自动化视图：Automation">
+          </topic>
+       </topic>
+    </topic>
+    <topic href="help/doc/StartInstall/InstallStart.htm#shiyong" label="2.工具使用">
+       <topic href="help/doc/StartInstall/InstallStart.htm#jianjie" label="2.1 界面简介">
+          <topic href="help/doc/StartInstall/InstallStart.htm#anliguanli" label="2.1.1 TestCase Explorer（测试案例管理）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#yingsheguanli" label="2.1.2 Map Explorer（映射文件管理）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#yonglibianxie" label="2.1.3 Edit（测试用例编写）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#log" label="2.1.4 Log（日志）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#keywordlist" label="2.1.5 Keyword List（关键字列表）">
+          </topic>
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#shuoming" label="2.2 使用说明">
+          <topic href="help/doc/StartInstall/InstallStart.htm#chucipeizhi" label="2.2.1 初次使用配置">
+             <topic href="help/doc/StartInstall/InstallStart.htm#xiugaishijian" label="2.2.1.1 修改自动化各事件事件">
+             </topic>
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#chucibuzhou" label="2.2.2 初次使用步骤">
+             <topic href="help/doc/StartInstall/InstallStart.htm#xinjianhuodaoru" label="2.2.2.1 新建或导入工程">
+             </topic>
+             <topic href="help/doc/StartInstall/InstallStart.htm#xinjianceshitaoanli" label="2.2.2.2 新建测试套和测试案例">
+             </topic>
+             <topic href="help/doc/StartInstall/InstallStart.htm#shejibianxie" label="2.2.2.3 设计并编写自动化脚本">
+             </topic>
+             <topic href="help/doc/StartInstall/InstallStart.htm#fenxitiaoshi" label="2.2.2.4 结合日志分析，调试脚本">
+             </topic>
+          </topic>
+       </topic>
+    </topic>
+    <topic href="help/doc/StartInstall/InstallStart.htm#caozuo" label="3.工具各模块详细操作方法">
+       <topic href="help/doc/StartInstall/InstallStart.htm#tcjiemiancaozuo" label="3.1 TestCase Explorer界面操作">
+          <topic href="help/doc/StartInstall/InstallStart.htm#xinjiangongcheng" label="3.1.1 新建自动化工程（New Automation Project）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#dakaigongcheng" label="3.1.2 打开自动化工程（Open Automation Project）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#shousuogongcheng" label="3.1.3 收缩工程（Collapse All）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#shuaxingongcheng" label="3.1.4 刷新工程（Refresh）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#xinjianceshitao" label="3.1.5 新建测试套（New TestSuit）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#xinjiananli" label="3.1.6 新建测试案例（New TestCase）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#shanchu" label="3.1.7 删除（Delete）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#tiaoshianli" label="3.1.8 调试测试案例（Debug TestCase）">
+          </topic>
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#mapjiemiancaozuo" label="3.2 Map Explorer界面操作">
+          <topic href="help/doc/StartInstall/InstallStart.htm#xinjianmulu" label="3.2.1 新建目录（New Folder）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#xinjianyingshe" label="3.2.2 新建控件映射文件（New Map）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#mulushousuo" label="3.2.3 目录收缩（Collapse All）">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#mulushuaxin" label="3.2.4 目录刷新（Refresh）">
+          </topic>
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#editjiemiancaozuo" label="3.3 Edit界面操作">
+          <topic href="help/doc/StartInstall/InstallStart.htm#ceshitaoanli" label="3.3.1 测试套/测试案例">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#yingshewenjian" label="3.3.2 控件映射文件">
+          </topic>
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#keywordjiemiancaozuo" label="3.4 Keyword List界面操作">
+          <topic href="help/doc/StartInstall/InstallStart.htm#keywordshaixuan" label="3.4.1 Keyword筛选">
+          </topic>
+       </topic>
+       <topic href="help/doc/StartInstall/InstallStart.htm#logjiemiancaozuo" label="3.5 Log界面操作">
+          <topic href="help/doc/StartInstall/InstallStart.htm#fenxirizhi" label="3.5.1 分析日志">
+          </topic>
+          <topic href="help/doc/StartInstall/InstallStart.htm#qingchurizhi" label="3.5.2 清除日志">
+          </topic>
+       </topic>
+    </topic>
+  </topic>
+	<topic label="02.TAP工具使用系统、浏览器安装及配置说明" href="help/doc/SATConfigGuide/SATConfigGuide.htm">
+      <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#System_Request" label="1.系统要求">
+      </topic>
+      <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#Browser_Request" label="2.浏览器版本要求">
+      </topic>
+      <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#IEConfig" label="3.IE浏览器配置">
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#SetDefault" label="3.1 IE设置为默认浏览器">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#CancelCheck" label="3.2 取消脚本自动检测">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#GoogleConfig" label="3.3 解决google外链延时加载配置">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#SetMixContent" label="3.4 设置显示混合内容（查看不安全传送的网页）">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#CancelCertCheck" label="3.5 取消证书匹配检查">
+         </topic>
+      </topic>
+      <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#FirefoxConfig" label="4.Firefox 浏览器的安装及配置">
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#FireFox14Setup" label="4.1 Firefox 14安装">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#CancelUpdate" label="4.2 取消Firefox检查更新">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#SetFirstPage" label="4.3 配置Firefox起始页">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#SetWebProxy" label="4.4 配置Firefox上网代理：使用系统代理">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#SetHosts" label="4.5 配置hosts">
+         </topic>
+      </topic>
+      <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#FirefoxPlugin" label="5.Firefox插件">
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#DisablePlugin_EPay" label="5.1 Firefox 浏览器禁用易付宝插件">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#FireBug_Setup" label="5.2 安装firebug插件">
+         </topic>
+         <topic href="help/doc/SATConfigGuide/SATConfigGuide.htm#UpdateFlash" label="5.3 更新插件Shockwave Flash">
+         </topic>
+      </topic>	
+	</topic>
+	<topic href="help/doc/KeywordUseGuide/Keyword_dev.htm" label="03.TAP工具 Keyword开发帮助手册">
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#xiazaianzhuang" label="1.下载并安装开发工具">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#anzhuanggongjv" label="1.1 下载并安装开发工具">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#jieyagongjv" label="1.2 解压并启动工具">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#jianchapeizhi" label="1.3 检查工具中Maven相关配置是否正确">
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#peizhisettings" label="2.配置Maven的settings.xml文件">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#settingslujing" label="2.1 配置Setting.xml路径">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#settingswenjian" label="2.2 配置setting.xml文件">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#shezhiprofilessettings" label="2.2.1 设置profiles setting.xm">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#peizhijingxiang" label="2.2.2 配置镜像网站">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#peizhiyonghu" label="2.2.3 配置用户名和密码">
+          </topic>
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#xinjiangongcheng" label="3.新建工程">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#jiangongcheng" label="3.1 新建工程">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#javazhuanmaven" label="3.2 将Java工程转换为Maven工程">
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#bianxiekeyword" label="4.编写keyword">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#xinjianclass" label="4.1 新建class">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#bianxiefangfa" label="4.2 编写keyword实现方法">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#dingyifangfaming" label="4.2.1 定义方法名">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#quedingcanshu" label="4.2.2 确定参数">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#fangfashixian" label="4.2.3 方法实现">
+          </topic>
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#ruheshiyong" label="5.如何使用">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#peizhixml" label="5.1 配置keyword.xml">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#daorujar" label="5.2 导入JAR">
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#fulu1" label="附录1 实例完整代码">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#javadaima" label="1.1 java代码">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#keywordxml" label="1.2 keyword.xml">
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#fulu2" label="附录2 Selenium获取元素常用方法">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#byid" label="2.1 By ID">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#byname" label="2.2 By Name">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#byxpath" label="2.3 By XPATH">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#byclass" label="2.4 By Class Name">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#bylink" label="2.5 By Link Text">
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#fulu3" label="附录3 常用API">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#liulanqilei" label="1.浏览器类-Browsers">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#jihuoliulanqi" label="1.1 激活浏览器-activate">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#dakailiulanqi" label="1.2 打开浏览器-create">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#huodedangqian" label="1.3 获得当前浏览器-current">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#panduancunzai" label="1.4 判断浏览器是否存在-isExist">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#guanbisuoyou" label="1.5 关闭所有浏览器-killAll">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#guanbizhiding" label="1.6 关闭指定的浏览器-remove">
+          </topic>
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#yemianyuansu" label="2.页面元素类-Elements">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#gouxuan" label="2.1 勾选-checkClick">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#xialaxuanze" label="2.2 下拉选择框-comboSelect">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#kongjiandianji" label="2.3 控件点击-elementClick">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#shubiaoyidong" label="2.4 鼠标移动到指定控件-elementMove">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#bixuankuang" label="2.5 必选框的勾选-radioClick">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#zifushuru" label="2.6 控件字符串输入-textInput">
+          </topic>
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#jiaoyanlei" label="3.校验类">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#tanchukuang" label="3.1 校验弹出框-verifyAlertText">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#yemianurl" label="3.2 校验当前页面URL">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#kongjiankeyong" label="3.3 校验控件是否可用">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#kongjianxuanzhong" label="3.4 校验控件是否选中">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#kongjianwenben" label="3.5 校验控件元素文本内容">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#kongjiankejian" label="3.6 校验控件可见性">
+          </topic>
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#ilogger" label="4.日志类-ILogger">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#miaoshu" label="4.1 描述信息-trace">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#tiaoshi" label="4.2 调试信息-debug">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#rizhixiaoxi" label="4.3 日志消息">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#jinggao" label="4.4 警告-warn">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#chucuo" label="4.5 出错-error">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#yanzhong" label="4.6 严重错误-fatal">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#rizhiwenben" label="4.7 日志文本-logText">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#cuowuduizhan" label="4.8 错误堆栈-logStackTrace">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#cuowujietu" label="4.9 错误截图-logSnapShot">
+          </topic>
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#chuanrucanshu" label="5.传入参数-Parameter">
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#stringcanshu" label="5.1 子参数为String">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#duixiangcanshu" label="5.2 子参数为对象">
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#shuchucanshu" label="5.3 子参数为输出变量">
+          </topic>
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#fulu4" label="附录4 编写keyword规范">
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#gongchengming" label="4.1 工程名">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#baoming" label="4.2 包名">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#leiming" label="4.3 Class（类名）">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keyword_dev.htm#method" label="4.4 method（方法、函数）">
+       </topic>
+    </topic>
+  </topic>
+	<topic href="help/doc/KeywordUseGuide/Keywword_1.htm" label="04.TAP工具 通用Keyword API 说明书">
+		<topic href="help/doc/KeywordUseGuide/Keywword_1.htm#APIBasic" label="1.Keyword API基础">
+       <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#APIIntroduction" label="1.1 Keyword API介绍">
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#APIPageDis" label="1.2 Keyword API界面展示">
+       </topic>
+    </topic>
+    <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#APIUse" label="2.Keyword API使用说明">
+       <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#WebKeyword" label="2.1 页面关键字">
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#WebOperate" label="2.1.1 浏览器操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserOpen" label="2.1.1.1 浏览器打开">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserMax" label="2.1.1.2 浏览器最大化">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserActivate" label="2.1.1.3 浏览器激活">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserLocate" label="2.1.1.4 浏览器地址输入">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserBack" label="2.1.1.5 浏览器后退">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserFoward" label="2.1.1.6 浏览器前进">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserRefresh" label="2.1.1.7 浏览器刷新">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserQuit" label="2.1.1.8 浏览器退出">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserClose" label="2.1.1.9 浏览器关闭">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserCloseAndSwitch" label="2.1.1.10 浏览器关闭并切换到原始窗口">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserPPKill" label="2.1.1.11 浏览器进程清除">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserSnapshot" label="2.1.1.12 浏览器快照">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserWindSwitch" label="2.1.1.13 浏览器窗口切换">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowseFrameSwitch" label="2.1.1.14 浏览器页面框架切换">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserAlertClick" label="2.1.1.15 弹出框点击操作">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#BrowserexeJS" label="2.1.1.16 执行JS脚本">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#WaitVisible" label="2.1.1.17 等待控件可见性判断">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#WaitExist" label="2.1.1.18 等待控件存在性判断">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#WaitText" label="2.1.1.19 等待控件文本匹配性判断">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#GetCurrUrl" label="2.1.1.20 获取当前页面URL">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ScrollBar" label="2.1.1.21 滚动条纵向移动">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#GetCookie" label="2.1.1.22 获取cookie的值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DelCookies" label="2.1.1.23 删除所有cookies">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DelCookie" label="2.1.1.24 删除某个cookie">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#AddCookie" label="2.1.1.25 增加cookie">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyOperate" label="2.1.2 校验操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyVisiable" label="2.1.2.1 校验控件可见性">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyEnable" label="2.1.2.2 校验控件可用性">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifySelected" label="2.1.2.3 校验控件是否已选中">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyText" label="2.1.2.4 校验控件文本">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyAttr" label="2.1.2.5 校验控件属性值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyCurrUrl" label="2.1.2.6 校验当前页面URL">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyAlertText" label="2.1.2.7 校验弹出框文本">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyComboText" label="2.1.2.8 校验下拉选项文本">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementOperate" label="2.1.3 控件操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementClick" label="2.1.3.1 控件点击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementClickAndSwitch" label="2.1.3.2 控件点击并切至新打开窗口">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementContextClick" label="2.1.3.3 控件右键点击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementDoubleClick" label="2.1.3.4 控件双击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementMove" label="2.1.3.5 鼠标移动">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ElementDrag" label="2.1.3.6 鼠标拖拽">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#TextInput" label="2.1.3.7 文本框文本输入">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#CheckClick" label="2.1.3.8 复选框点击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RadioClick" label="2.1.3.9 单选框点击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ComboSelect" label="2.1.3.10 下拉列表选择">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#GetAttrValue" label="2.1.3.11 获取控件属性值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#GetElementText" label="2.1.3.12 获取控件文本值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#SetAttrText" label="2.1.3.13 设置控件属性值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#GetTableElemText" label="2.1.3.14 获取表格中的控件元素">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#jianpandongzuo" label="2.1.3.15 键盘动作">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#tuxiangshibie" label="2.1.4 图像识别">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#tuxiangdianji" label="2.1.4.1 图像点击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#tuxiangshuangji" label="2.1.4.2 图像双击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#tuxiangyouji" label="2.1.4.3 图像右击">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#tuxiangwenbenshuru" label="2.1.4.4 图像文本输入">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#" label="2.1.4.5 校验图像存在性">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#dengdaituxiang" label="2.1.4.6 等待图像出现">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#dengdaituxiangxiaoshi" label="2.1.4.7 等待图像消失">
+             </topic>
+          </topic>
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#InterfaceKeyword" label="2.2 协议关键字">
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#XMLOperate" label="2.2.1 XML操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#XMLLoad" label="2.2.1.1 加载XML文件">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#XMLUpd" label="2.2.1.2 修改XML元素内容">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#XMLGet" label="2.2.1.3 获取XML元素内容">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#XMLVerify" label="2.2.1.4 校验XML元素内容">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#JSONOperate" label="2.2.2 JSON操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#JSONLoad" label="2.2.2.1 加载JSON文件">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#JSONUpd" label="2.2.2.2 修改JSON元素内容">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#JSONGet" label="2.2.2.3 获取JSON元素内容">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#JSONVerify" label="2.2.2.4 校验JSON元素内容">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#HttpProxy" label="2.2.3 HTTP协议">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#HttpPost" label="2.2.3.1 HTTP_POST请求">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#HttpGet" label="2.2.3.2 HTTP_GET请求">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#AddHead" label="2.2.3.3 添加头域">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DelHead" label="2.2.3.4 删除头域">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#verifyHead" label="2.2.3.5 校验头域">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#MQOperate" label="2.2.4 MQ操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#MQInit" label="2.2.4.1 MQ连接初始化">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#MQPush" label="2.2.4.2 将消息放入MQ队列">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#MQGet" label="2.2.4.3 从队列中取消息">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#MQClose" label="2.2.4.4 关闭队列及队列管理器">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#hessian" label="2.2.5 Hessian操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#jiaoyanhessian" label="2.2.5.1 校验Hessian消息体">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#huoquhessian" label="2.2.5.2 获取Hessian消息字段">
+             </topic>
+          </topic>
+       </topic>
+       <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#PublicKeyword" label="2.3 公用关键字">
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RedisOperate" label="2.3.1 REDIS操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RedisOpen" label="2.3.1.1 打开redis连接">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RedisValueGet" label="2.3.1.2 获取redis中key对应的值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RedisAddOrUpd" label="2.3.1.3 新增/修改redis中key对应String类型值">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RedisDel" label="2.3.1.4 删除redis中key数据">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RedisQuit" label="2.3.1.5 退出redis连接">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBOperate" label="2.3.2 数据库操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBOpen" label="2.3.2.1 打开数据库连接">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBQuery" label="2.3.2.2 执行SQL查询">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBNotQuery" label="2.3.2.3 执行SQL新增/修改/删除">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBResultVerify" label="2.3.2.4 校验数据库结果集">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBResultGet" label="2.3.2.5 获取数据库结果集内容">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#DBClose" label="2.3.2.6 关闭数据库连接">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#LinuxOperate" label="2.3.3 LINUX操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#LinuxConn" label="2.3.3.1 通过ssh协议连接linux服务器">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#LinuxCmd1" label="2.3.3.2 执行Linux命令_无返回结果">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#LinuxCmd2" label="2.3.3.3 执行Linux命令_需返回结果">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#LinuxClose" label="2.3.3.4 关闭Linux连接">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#OtherOperate" label="2.3.4 其它通用操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#WaitTime" label="2.3.4.1 等待时间">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#CurrentTime" label="2.3.4.2 生成当前时间戳字符">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#VerifyString" label="2.3.4.3 字符串校验">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#GetIP" label="2.3.4.4 获取本机IP地址">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#RandomString" label="2.3.4.5 生成随机字符串">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#Substr1" label="2.3.4.6 截取从指定开始位至结束位间的字符串">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#Substr2" label="2.3.4.7 截取从指定位开始及长度的字符串">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#Substr3" label="2.3.4.8 截取从指定位开始至末尾的全部字符串">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ReplaceStr" label="2.3.4.9 字符串替换">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ValueCalc" label="2.3.4.10 数值计算">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#ValueComp" label="2.3.4.11 数值比较">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#zidingyibianliang" label="2.3.4.12 自定义变量">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#dayin" label="2.3.4.13 日志打印">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#MD5jiami" label="2.3.4.14 MD5加密">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#shenfenzheng" label="2.3.4.15 生成身份证号">
+             </topic>
+             <topic href="tupianxiangyingma" label="2.3.4.16 获取页面图片原地址请求响应码">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#" label="2.3.4.17 生成并保存数据至CSV文件">
+             </topic>
+          </topic>
+          <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#SAP" label="2.3.5 SAP操作">
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#zidingyiqidong" label="2.3.5.1 启动SAP：自定义应用程序服务器">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#zufuwuqidong" label="2.3.5.2 启动SAP：组/服务器选择">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#" label="2.3.5.3 登录SAP">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#guanbisap" label="2.3.5.4 关闭SAP">
+             </topic>
+             <topic href="help/doc/KeywordUseGuide/Keywword_1.htm#shurushiwu" label="2.3.5.5 输入食物代码">
+             </topic>
+          </topic>
+       </topic>
+    </topic>
+ </topic>
+	<topic href="help/doc/FAQ/FAQ.htm" label="05.TAP自动化测试工具平台FAQ">
+    <topic href="help/doc/FAQ/FAQ.htm#morenie" label="1.IE设置为默认浏览器">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#iezhengshu" label="2.IE浏览器安装证书">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#googlewailian" label="3.解决google外链延时加载">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#tianjiabuxinren" label="4.Firefox浏览器添加不信任链接">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#jinyongyifubao" label="5.Firefox浏览器禁用易付宝插件">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#liulanqishibai" label="6.IE浏览器打开失败">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#anzhuangie7" label="7.卸载IE8后安装IE7，执行自动化找不到元素">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#sessionchongtu" label="8.PRE前台易购账户登录后，IE打开后台贸易加速器登录账户报错">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#maoyijiasuqi" label="9.IE打开后台贸易加速器，页面显示不完整">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#buanquan" label="10.IE报页面不安全内容提示">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#kongzhizhen" label="11.IE报自动化等待广告页稳定报空指针">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#firefoxshibai" label="12.Firefox浏览器打开失败">
+    </topic>
+    <topic href="help/doc/FAQ/FAQ.htm#jinchengqingchushibai" label="13.浏览器进程清除keyword执行命令失败">
+    </topic>
+ </topic>
+</toc>
